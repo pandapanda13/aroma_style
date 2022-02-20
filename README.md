@@ -8,8 +8,7 @@
 
 ### テーマを選んだ理由
 ・コロナ禍で自宅で過ごすことが長くなり、気分転換やリラックスのためにアロマオイルを焚くことが増えたこと。<br>
-・嗅覚異常に悩まされた時期に医師にアロマオイルによる嗅覚の訓練を勧められたこともあり、単に香りを楽しむだけのものではないと
-　知ったこと。<br>
+・嗅覚異常に悩まされた時期に医師にアロマオイルによる嗅覚の訓練を勧められたこともあり、単に香りを楽しむだけのものではないと知ったこと。<br>
 ・作成するに当たってよりアロマオイルについての知識を深めたいと思ったこと。<br>
 以上がこのテーマを選んだ理由です。
 
@@ -23,7 +22,7 @@
 <...>
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1E4Quehglf9PxM1XTE-ft2X5-hJ5dmoJhsI-UJlgzVmY/edit#gid=0>
+https://docs.google.com/spreadsheets/d/1vxIFNWrL-PSEGXD1A8scy12r9ft5x66L8vps1hQ5x_k/edit?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
