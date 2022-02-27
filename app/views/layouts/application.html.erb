@@ -11,6 +11,60 @@
   </head>
 
   <body>
+    <header>
+    <% if customer_signed_in? %>
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
+       </div>
+       <div class="row justify-content-center">
+         <nav class="navbar navbar-expand-lg ">
+          <ul class="navbar-nav mt-2">
+            <li class="h3"><%= link_to "About", about_path %></li>
+            <li class="h3 ml-4"><%= link_to "Products", items_path %></li>
+            <li class="h3 ml-4"><%= link_to "Cart", cart_items_path %></li>
+            <li class="h3 ml-4"><%= link_to "My Page", customers_mypage_path %></li>
+            <li class="h3 ml-4"><%= link_to "Log Out", destroy_customer_session_path %></li>
+          </ul>
+         </nav>
+       </div>
+     </div>
+     <% elsif admin_signed_in? %>
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
+       </div>
+       <div class="row justify-content-center">
+         <nav class="navbar navbar-expand-lg ">
+          <ul class="navbar-nav mt-2">
+            <li class="h3"><%= link_to "Orders", admin_homes_top_path %></li>
+            <li class="h3 ml-4"><%= link_to "Customers", admin_customers_path %></li>
+            <li class="h3 ml-4"><%= link_to "Products", admin_items_path %></li>
+            <li class="h3 ml-4"><%= link_to "Log Out", destroy_admin_session_path %></li>
+          </ul>
+         </nav>
+       </div>
+     </div>
+     <% else %>
+     <div class="container">
+       <div class="row justify-content-center">
+         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
+       </div>
+       <div class="row justify-content-center">
+         <nav class="navbar navbar-expand-lg ">
+          <ul class="navbar-nav mt-2">
+            <li class="h3"><%= link_to "About", about_path %></li>
+            <li class="h3 ml-4"><%= link_to "Products", items_path %></li>
+            <li class="h3 ml-4"><%= link_to "Create Account", new_customer_registration_path %></li>
+            <li class="h3 ml-4"><%= link_to "Log In", customer_session_path %></li>
+          </ul>
+         </nav>
+       </div>
+      <% end %>
+     </div>
+
+
+    </header>
     <%= yield %>
   </body>
 </html>

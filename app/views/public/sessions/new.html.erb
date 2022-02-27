@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-11">
+    <p class="h5 px-4">ログイン</p>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="row">
+    <div class="col-3 offset-1 mt-4"><%= f.label :メールアドレス %></div>
+    <div class="col-6 mt-4"><%= f.email_field :email, size: "35",autofocus: true, autocomplete: "email" %></div>
+
+
+    <div class="col-3 offset-1 mt-4"><%= f.label :パスワード %></div>
+    <div class="col-6 mt-4"><%= f.password_field :password, size: "35", autocomplete: "current-password" %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-3 offset-4 mt-4">
+    <%= f.submit "ログイン", class: "btn btn-success mt-4" %>
+    </div>
+  </div>
+
+
+　 <div class="row">
+    <div class="col-11 offset-1">
+     <p class="h5 mt-4">初めてご利用の方</p>
+     <%= link_to "新規会員登録", new_customer_registration_path, class: 'btn btn-success' %><br>
+     <p>※お買い物をして頂くには会員登録が必要です</p>
+   </div>
+ </div>
+<% end %>
+</div>
