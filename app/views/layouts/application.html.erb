@@ -15,9 +15,10 @@
     <% if customer_signed_in? %>
      <div class="container">
        <div class="row justify-content-center">
-         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
-       </div>
-       <div class="row justify-content-center">
+         <div class="logo col-12  m-4 text-center">
+            <a class="navbar-brand" href="/"><%= image_tag '/assets/logo_black.png' %></a>
+         </div>
+       <div class="row justify-content-center mb-4">
          <nav class="navbar navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
             <li class="h3"><%= link_to "About", about_path %></li>
@@ -32,9 +33,10 @@
      <% elsif admin_signed_in? %>
      <div class="container">
        <div class="row justify-content-center">
-         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
-       </div>
-       <div class="row justify-content-center">
+         <div class="logo col-12  m-4 text-center">
+            <a class="navbar-brand" href="/"><%= image_tag '/assets/logo_black.png' %></a>
+         </div>
+       <div class="row justify-content-center mb-4">
          <nav class="navbar navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
             <li class="h3"><%= link_to "Orders", admin_homes_top_path %></li>
@@ -48,15 +50,17 @@
      <% else %>
      <div class="container">
        <div class="row justify-content-center">
-         <div class="logo col-12  m-5 h1 text-center">Aroma Style</div>
+         <div class="logo col-12  m-4 text-center">
+            <a class="navbar-brand" href="/"><%= image_tag '/assets/logo_black.png' %></a>
+         </div>
        </div>
-       <div class="row justify-content-center">
-         <nav class="navbar navbar-expand-lg ">
+       <div class="row justify-content-center mb-4">
+         <nav class="navbar navbar-expand-lg">
           <ul class="navbar-nav mt-2">
-            <li class="h3"><%= link_to "About", about_path %></li>
-            <li class="h3 ml-4"><%= link_to "Products", items_path %></li>
-            <li class="h3 ml-4"><%= link_to "Create Account", new_customer_registration_path %></li>
-            <li class="h3 ml-4"><%= link_to "Log In", customer_session_path %></li>
+            <li class="h4 text-secondary"><%= link_to "About", about_path %></li>
+            <li class="h4 ml-4 text-secondary"><%= link_to "Products", items_path %></li>
+            <li class="h4 ml-4"><%= link_to "Create Account", new_customer_registration_path %></li>
+            <li class="h4 ml-4"><%= link_to "Log In", customer_session_path %></li>
           </ul>
          </nav>
        </div>

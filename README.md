@@ -37,4 +37,6 @@ https://docs.google.com/spreadsheets/d/1vxIFNWrL-PSEGXD1A8scy12r9ft5x66L8vps1hQ5
 
 ## 使用素材
 - pixabay  https://pixabay.com/
+- LOGASTER
 
+config.assets.compile = true

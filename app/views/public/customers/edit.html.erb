@@ -1,2 +1,41 @@
-<h1>Public::Customers#edit</h1>
-<p>Find me in app/views/public/customers/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+   <div class="col-10 offset-2 mt-4">
+     <p class="h5">登録情報編集</p>
+   </div>
+  </div>
+   <%= form_with model: @customer, url: customers_update_path, local:true do |f| %>
+    <div class="row">
+       <label for="name": class="col-2 offset-2 mt-3">氏名</label>
+       <div class="col-8 mt-3"><%= f.text_field :name %></div>
+    </div>
+    <div class="row">
+       <label for="name_kana": class="col-2 offset-2 mt-3">フリガナ</label>
+       <div class="col-8 mt-3"><%= f.text_field :name_kana %></div>
+    </div>
+    <div class="row">
+       <label for="postal_code": class="col-2 offset-2 mt-3">郵便番号</label>
+       <div class="col-8 mt-3"><%= f.text_field :postal_code %></div>
+    </div>
+    <div class="row">
+       <label for="address": class="col-2 offset-2 mt-3">住所</label>
+       <div class="col-8 mt-3"><%= f.text_field :address, size: "40" %></div>
+    </div>
+    <div class="row">
+       <label for="telephone_number": class="col-2 offset-2 mt-3">電話番号</label>
+       <div class="col-8 mt-3"><%= f.text_field :telephone_number %></div>
+    </div>
+    <div class="row">
+       <label for="email": class="col-2 offset-2 mt-3">メールアドレス</label>
+       <div class="col-8 mt-3"><%= f.text_field :email %></div>
+    </div>
+    <div class="row">
+      <div class="col-2 offset-4 mt-4">
+        <%= f.submit :編集内容を保存, class: 'btn btn-outline-success py-2 px-3' %>
+      </div>
+
+    </div>
+
+    <% end %>
+
+</div>
