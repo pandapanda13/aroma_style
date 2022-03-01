@@ -49,7 +49,12 @@
   <%= f.text_field :price, size: "35" %>円
  </div>
 </div>
-
+<div class="col-2 offset-4">
+ <%= f.radio_button :blend_flag, class: false %>
+ <%= f.label :blend_flag,"通常商品", value: false %>
+ <%= f.radio_button :blend_flag, class: true %>
+ <%= f.label :blend_flag,"ブレンド商品", value: true %>
+</div>
 
 <div class="col-2 offset-4">
  <%= f.submit :新規登録, class: 'btn btn-outline-success  px-5 px-3' %>

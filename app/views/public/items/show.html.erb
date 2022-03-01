@@ -1,2 +1,44 @@
-<h1>Public::Items#show</h1>
-<p>Find me in app/views/public/items/show.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="image col-3 offset-1 mt-5">
+      <%= image_tag @item.image_id, size: "300x240" %>
+    </div>
+
+    <div class="col-6 offset-1 mt-5">
+      <h4 class="item-name mb-3"><%= @item.name %></h4>
+      <p class="h6">容量：<%= @item.volume %></p>
+      <p><%= @item.introduction %></p>
+      <P class="font-weight-bold"><%= @item.add_tax_price.to_s (:delimited) %>
+         円(税込)</P>
+
+
+
+    <div class="select mt-2">
+       <% if customer_signed_in? %>
+        <%= form_with(model: @cart_item, url: cart_items_path, method: :post, local: true)do |f| %>
+          <% if @item.blend_flag = true %>
+          <div class=”field ”>
+           <%= f.label :selected,"選択して下さい"%><br>
+           <% @items.each do |item| %>
+            <% unless item.name == "2種ブレンド" || item.name == "3種ブレンド"%>
+            <%= f.check_box :name, {multiple: true}, item.name, nil %>
+            <%= item.name %>
+            <% end %>
+           <% end %>
+          </div>
+          <% end %>
+   </div>
+   <div class="mt-3 text-right">
+         <% if customer_signed_in? %>
+         <%= f.label :amount, "個数を選択" %>
+          <%= f.select :amount, [1,2,3,4,5] %>
+          <%= f.hidden_field :item_id, :value => @item.id %>
+          <%= f.submit "カートに入れる", class: 'btn btn-outline-success px-2 py-1 ml-4' %>
+         <% else %>
+         <% end %>
+       <% end %>
+      <% end %>
+    </div>
+    </div>
+  </div>
+</div>

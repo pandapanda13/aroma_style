@@ -49,6 +49,17 @@
   <%= f.text_field :price %>円
  </div>
 </div>
+<div class="row">
+ <div class="col-2 offset-2 mt-3">
+  <p>商品ジャンル</p>
+ </div>
+ <div class="col-4 mt-3">
+   <%= f.radio_button :blend_flag, true %>
+   <%= f.label :blend_flag,"ブレンド商品", value: true %>
+   <%= f.radio_button :blend_flag, false %>
+   <%= f.label :blend_flag,"通常商品", value: false %><br>
+ </div>
+</div>
 
 <div class="row">
  <div class="col-2 offset-3 mt-3"></div>

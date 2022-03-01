@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-  　<p class="title col-2 px-4">商品一覧</p>
+   <p class="title col-2 px-4">商品一覧</p>
   </div>
 
   <div class="row">
@@ -17,6 +17,8 @@
          <th class="py-2 px-4">商品名</th>
          <th class="py-2 px-4">容量</th>
          <th class="py-2 px-4">税抜価格</th>
+         <th class="py-2 px-4">商品ジャンル</th>
+
         </tr>
       </thead>
       <tbody>
@@ -26,6 +28,13 @@
            <td class="py-2 px-4"><%= link_to item.name, admin_item_path(item.id) %></td>
            <td class="py-2 px-4"><%= item.volume %></td>
            <td class="py-2 px-4"><%= item.price.to_s (:delimited) %>円</td>
+           <td class="py-2 px-4">
+             <% if item.blend_flag == true %>
+              <%= blend_flag = "ブレンド商品" %>
+             <% else %>
+              <%= blend_flag = "通常商品" %>
+             <% end %>
+          </td>
          </tr>
         <% end %>
       </tbody>
