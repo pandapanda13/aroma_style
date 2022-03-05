@@ -8,23 +8,22 @@
         <tr class="text-center">
           <th class="py-2 px-1">注文日</th>
           <th class="py-2 px-1">配送先</th>
-          <th class="py-2 px-1">商品名</th>
+          <th class="py-2 px-1">商品名(クリックでレビュー投稿）</th>
           <th class="py-2 px-1">お支払金額</th>
           <th class="py-2 px-1">発送状況</th>
-          <th class=""></th>
         </tr>
       </thead>
       <% @orders.each do |order| %>
       <tbody>
         <tr>
-          <td class="py-2 px-1 text-center"><%= order.created_at.strftime('%Y年%m月%d日') %></td>
+          <td class="py-2 px-1 text-center"><%= link_to order_path(order) do %><%= order.created_at.strftime('%Y/%m/%d') %><% end %></td>
           <td class="py-2 px-1">〒<%= order.postal_code %> <%= order.address %><br><%= order.name %> 様</td>
           <td class="py-2 px-1"><% order.order_details.each do |order| %>
                                 <%= order.item.name %><br>
+                                <%= order.selected %>
                                 <% end %></td>
           <td class="py-2 px-1 text-center"><%= order.bill.to_s (:delimited) %>円</td>
           <td class="py-2 px-1 text-center"><%= order.shipping_status %></td>
-          <td class="text-center"><%= link_to "注文詳細", order_path(order), class: 'btn btn-outline-success' %></td>
         </tr>
       </tbody>
       <% end %>

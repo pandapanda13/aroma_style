@@ -15,6 +15,7 @@ class Public::OrdersController < ApplicationController
        @order_detail.item_id = cart_item.item_id
        @order_detail.order_id = @order.id
        @order_detail.amount = cart_item.amount
+       @order_detail.selected = cart_item.selected
        @order_detail.price = cart_item.item.price
        @order_detail.save
      end
@@ -32,10 +33,13 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders.all.order(created_at: :desc)
+    
+   
   end
 
   def show
-
+    @order = Order.find(params[:id])
+    @order_detail = OrderDetail.find(params[:id])
   end
 
   def confirm
