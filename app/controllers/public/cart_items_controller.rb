@@ -50,23 +50,18 @@ class Public::CartItemsController < ApplicationController
     end
 
     cart_item.customer_id = current_customer.id
-    if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id], selected: params[:cart_item][:selected].join("・")).present?
+    if item.blend_flag == true && current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id], selected: params[:cart_item][:selected].join("・")).present?
       # すでに同じ種類、同じ選択された商品がカートに入っている
       cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id], selected: params[:cart_item][:selected].join("・"))
       cart_item.amount += params[:cart_item][:amount].to_i
       cart_item.save
       redirect_to cart_items_path
-#    else
-#    end
-#    if current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
-
-#        cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
-#        cart_item.amount += params[:cart_item][:amount].to_i
-#        cart_item.save
-#      redirect_to cart_items_path
-
-
       # ないので新しく追加する。
+    elsif item.blend_flag == false && current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id]).present?
+      cart_item = current_customer.cart_items.find_by(item_id: params[:cart_item][:item_id])
+      cart_item.amount += params[:cart_item][:amount].to_i
+      cart_item.save
+      redirect_to cart_items_path
     elsif cart_item.save
       redirect_to cart_items_path
     else
