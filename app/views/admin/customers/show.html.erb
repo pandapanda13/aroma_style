@@ -1,5 +1,28 @@
 <div class="container">
   <div class="row">
-   <p class="title col-４ px-4"><%= @customer.name %>　様　顧客詳細</p>
+   <p class="title col-6 px-4"><%= @customer.name %>　様　顧客詳細</p>
   </div>
+  <div class="row">
+   <div class="col-4 offset-2 mt-3">
+    <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: 'btn btn-outline-success' %>
+   </div>
+  </div>
+  <div class="row">
+    <table class="table-bordered mt-3 offset-2 center-block">
+      <thead>
+        <tr><th class="px-2 py-2">会員ID</th><td class="px-2"><%= @customer.id %></td></tr>
+        <tr><th class="px-2 py-2">氏名</th><td class="px-2"><%= @customer.name %></td></tr>
+         <tr><th class="px-2 py-2">フリガナ</th><td class="px-2"><%= @customer.name_kana %></td></tr>
+         <tr><th class="px-2 py-2">住所</th><td class="px-2 pr-5">〒<%= @customer.postal_code %> <%= @customer.address %></td></tr>
+         <tr><th class="px-2 py-2">電話番号</th><td class="px-2"><%= @customer.telephone_number %></td></tr>
+         <tr><th class="px-2 py-2">メールアドレス</th><td class="px-2"><%= @customer.email %></td></tr>
+         <tr><th class="px-2 py-2">ステータス</th><td class="pt-2 px-2"><% if @customer.is_active == true %>
+                              <p class="font-weight-bold"><%= is_active = "有効" %></p>
+                              <% else %>
+                              <p class="text-black-50 font-weight-bold"><%= is_active = "退会" %></p>
+                              <% end %></td></tr>
+      </thead>
+    </table>
+  </div>
+  
 </div>
