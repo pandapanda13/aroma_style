@@ -13,7 +13,7 @@
          <tr><th class="table-active py-2 px-2">注文日</th><td class="py-2 px-2"><%= @order.created_at.strftime('%Y/%m/%d')  %></td></tr>
          <tr><th class="table-active py-2 px-2">配送先</th><td class="py-2 px-2"><%= @order.address %><br><%= @order.name %>  様</td></tr>
          <tr><th class="table-active py-2 px-2">お支払い方法</th><td class="py-2 px-2"><%= @order.payment_i18n %></td></tr>
-         <tr><th class="table-active py-2 px-2">発送状況</th><td class="py-2 px-2"><%= @order.shipping_status  %></td></tr>
+         <tr><th class="table-active py-2 px-2">発送状況</th><td class="py-2 px-2"><%= @order.shipping_status_i18n  %></td></tr>
        </thed>
      </table>
 
@@ -27,5 +27,40 @@
        </thed>
      </table>
   </div>
+   <div class="row">
+    <p class="col-8 mt-5 font-weight-bold">注文内容</p><br>
+  </div>
+  <div class="row">
+    <table class="table-bordered col-8 mt-2">
+      <thed>
+        <tr>
+          <th class="py-2 px-2">商品名</th>
+          <th class="py-2 px-2">容量</th>
+          <th class="py-2 px-2">単価(税込)</th>
+          <th class="py-2 px-2">数量</th>
+          <th class="py-2 px-2">小計</th>
+          <th class="py-2 px-3">レビュー</th>
+
+        </tr>
+      </thed>
+      <tbody>
+      <% @total = 0 %>
+      <% @order_details.each do |order_detail| %>
+       <tr>
+         <td class="py-2 px-2"><%= order_detail.item.name %><br><%= order_detail.selected %></td>
+         <td class="py-2 px-2"><%= order_detail.item.volume %></td>
+         <td class="py-2 px-2"><%= order_detail.item.add_tax_price.to_s (:delimited) %></td>
+         <td class="py-2 px-2"><%= order_detail.amount %></td>
+          <% @subtotal = order_detail.item.add_tax_price*order_detail.amount %>
+         <td class="py-2 px-2"><%= @subtotal.to_s (:delimited) %></td>
+         <% @total += @subtotal %>
+         <td class="py-2 px-2"><%= link_to "レビュー投稿", new_comment_path, class: 'btn btn-outline-success' %></td>
+        
+
+      <% end %>
+
+      </tbody>
+    </table>
+
 
 </div>

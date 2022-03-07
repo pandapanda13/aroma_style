@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    resources :order_details, only:[:update]
+  end
   scope module: 'public' do
     get 'customers/mypage', to: 'customers#show'
     get 'customers/edit', to: 'customers#edit'
@@ -27,8 +30,7 @@ Rails.application.routes.draw do
     get 'about', to: 'homes#about'
   end
   namespace :admin do
-    get 'orders/show'
-    get 'orders/update'
+    resources :orders, only:[:show, :update]
   end
   namespace :admin do
     resources :customers, only:[:index, :show, :edit, :update]

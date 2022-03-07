@@ -38,7 +38,7 @@
   <p>商品説明</p>
  </div>
  <div class="col-4 mt-3">
-  <%= f.text_area :introduction %>
+  <%= f.text_area :introduction, size: "40x10" %>
  </div>
 </div>
 <div class="row">
@@ -62,8 +62,8 @@
 </div>
 
 <div class="row">
- <div class="col-2 offset-3 mt-3"></div>
-  <%= f.submit :変更を保存, class: 'btn btn-outline-success  py-2 px-4' %>
+ <div class="col-2 offset-2 mt-3"></div>
+  <%= f.submit :変更を保存, class: 'btn btn-outline-success col-4 btn-block py-2 px-4' %>
  </div>
 </div>
 <% end %>

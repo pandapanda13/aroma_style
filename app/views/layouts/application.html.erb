@@ -21,11 +21,11 @@
        <div class="row justify-content-center mb-4">
          <nav class="navbar navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
-            <li class="h3"><%= link_to "About", about_path %></li>
-            <li class="h3 ml-4"><%= link_to "Products", items_path %></li>
-            <li class="h3 ml-4"><%= link_to "Cart", cart_items_path %></li>
-            <li class="h3 ml-4"><%= link_to "My Page", customers_mypage_path %></li>
-            <li class="h3 ml-4"><%= link_to "Log Out", destroy_customer_session_path, method: :delete %></li>
+            <li class=""><%= link_to about_path do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
+            <li class="ml-4"><%= link_to items_path do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="ml-4"><%= link_to cart_items_path do %><p class="h5 font-weight-bold">Cart</p><p class="font-weight-normal">お買い物かご</p><% end %></li>
+            <li class="ml-4"><%= link_to customers_mypage_path do %><p class="h5 font-weight-bold">My Page</p><p class="font-weight-normal">マイページ</p><% end %></li>
+            <li class="ml-4"><%= link_to destroy_customer_session_path, method: :delete do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
        </div>
@@ -39,10 +39,10 @@
        <div class="row justify-content-center mb-4">
          <nav class="navbar navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
-            <li class="h3"><%= link_to "Orders", admin_homes_top_path %></li>
-            <li class="h3 ml-4"><%= link_to "Customers", admin_customers_path %></li>
-            <li class="h3 ml-4"><%= link_to "Products", admin_items_path %></li>
-            <li class="h3 ml-4"><%= link_to "Log Out", destroy_admin_session_path, method: :delete %></li>
+            <li class=""><%= link_to admin_homes_top_path do %><p class="h5 font-weight-bold">Orders</p><p class="font-weight-normal">注文履歴一覧</p><% end %></li>
+            <li class="ml-4"><%= link_to admin_customers_path do %><p class="h5 font-weight-bold">Customers</p><p class="font-weight-normal">顧客一覧</p><% end %></li>
+            <li class="ml-4"><%= link_to admin_items_path do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="ml-4"><%= link_to destroy_admin_session_path, method: :delete do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
        </div>
@@ -57,10 +57,10 @@
        <div class="row justify-content-center mb-4">
          <nav class="navbar navbar-expand-lg">
           <ul class="navbar-nav mt-2">
-            <li class="h4 text-secondary"><%= link_to "About", about_path %></li>
-            <li class="h4 ml-4 text-secondary"><%= link_to "Products", items_path %></li>
-            <li class="h4 ml-4"><%= link_to "Create Account", new_customer_registration_path %></li>
-            <li class="h4 ml-4"><%= link_to "Log In", customer_session_path %></li>
+            <li class=""><%= link_to about_path do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
+            <li class="ml-4"><%= link_to items_path do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="ml-4"><%= link_to new_customer_registration_path do %><p class="h5 font-weight-bold">Create Account</p><p class="font-weight-normal">新規会員登録</p><% end %></li>
+            <li class="ml-4"><%= link_to customer_session_path do %><p class="h5 font-weight-bold">Log In</p><p class="font-weight-normal">ログイン</p><% end %></li>
           </ul>
          </nav>
        </div>

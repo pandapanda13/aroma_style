@@ -3,10 +3,17 @@
    <div class="col-3 offset-3 mt-4">
      <p class="h5 px-4">登録情報</p>
    </div>
-  </div> 
+  </div>
+
+  <div class="row">
+   <div class="col-4 offset-7">
+   <%= link_to "注文履歴へ", orders_path(current_customer), class: 'btn btn-outline-success mx-4'%>
+   </div>
+  </div>
 
   <div class="row">
    <div class="col-5 offset-6 mt-3">
+
      <%= link_to "編集する", customers_edit_path(current_customer), class: 'btn btn-outline-success mx-3'%>
      <%= link_to "退会する", customers_unsubscribe_path, class: 'btn btn-outline-danger' %>
    </div>

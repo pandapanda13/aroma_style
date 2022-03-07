@@ -4,3 +4,13 @@ ja:
       payment:
         credit_card: 'クレジットカード'
         transfer: '銀行振込'
+      shipping_status:
+        waiting: '入金待ち'
+        paid: '入金確認'
+        shipped: '発送済み'
+    order_detail:
+      status:
+        unstarted: '準備前'
+        preparing: '発送準備中'
+        completed: '発送準備完了'
+        
