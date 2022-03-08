@@ -1,2 +1,11 @@
-<h1>Public::Comments#index</h1>
-<p>Find me in app/views/public/comments/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <p class=""><%= @item.name %> のレビュー一覧</p>
+  </div>
+  <div class="row">
+    <% @comments.each do |comment| %>
+     <%= comment.comment_content %>
+     <%= comment.rate %>
+    <% end %>
+  </div>
+</div>

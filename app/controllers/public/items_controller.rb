@@ -8,12 +8,13 @@ class Public::ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @items = Item.all
     @cart_item = CartItem.new
+    @comments = @item.comments
   end
 
   private
   def item_params
-   params.require(:item).permit(:name,:introduction,:image_id, :price, :blend_flag)
+   params.require(:item).permit(:name,:introduction,:image_id, :price, :blend_flag, :rate, :comment_content)
   end
 
-  
+
 end

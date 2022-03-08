@@ -1,1 +1,33 @@
-<p>コメント投稿</p>
+<div class="container">
+ <div class="row">
+    <p class="h5 col-8 offset-2 mt-4 text-center"><%= @item.name %>のレビュー投稿</p>
+ </div>
+
+ <div class="row">
+
+  <div class="col-8 offset-2 mt-2 text-center">
+   <%= form_with model:@comment, url: item_comments_path(@item), method: :post, local:true do |f| %>
+   <div id="star">
+        <%= f.label :rate,  "星評価 (※必須)"  %>
+        <%#= f.text_field :rate, id: :star %>
+        <%= f.hidden_field :rate ,id: :comment_rate %>
+  </div>
+  <div class="col-8 offset-2 mt-2 text-center">
+   <%= f.text_area :comment_content, placeholder: "星評価のみでも投稿できます", size: "42x5" %><br>
+  </div>
+ </div>
+    <%= f.submit "投稿", class: 'col-4 offset-4  btn btn-block btn-outline-success' %>
+  <% end %>
+</div>
+
+
+  <script>
+   $('#star').raty({
+       size     : 36,
+       starOff:  '<%= asset_path('star-off.png') %>',
+       starOn : '<%= asset_path('star-on.png') %>',
+       starHalf: '<%= asset_path('star-half.png') %>',
+       scoreName: 'comment[rate]',
+       half: true,
+   });
+   </script>

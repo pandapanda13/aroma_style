@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe'
     patch 'customers/withdraw'
   end
-  scope module: 'public' do
-    resources :comments
-  end
+  #scope module: 'public' do
+    #resources :comments
+  #end
   scope module: 'public' do
     get 'orders/thanks'
     post 'orders/confirm'
@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     resources :cart_items, only:[:index, :create, :update, :destroy]
   end
   scope module: 'public' do
-    resources :items, only:[:index, :show]
+    resources :items, only:[:index, :show] do
+     resources :comments, shallow: true
+    end
   end
   scope module: 'public' do
     root to: 'homes#top'

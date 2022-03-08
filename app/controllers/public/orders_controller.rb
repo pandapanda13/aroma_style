@@ -35,14 +35,15 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders.all.order(created_at: :desc)
-    
-   
+
+
   end
 
   def show
     @order = Order.find(params[:id])
     @order_detail = OrderDetail.find(params[:id])
     @order_details = @order.order_details
+    @item = @order_detail.item
   end
 
   def confirm

@@ -45,4 +45,19 @@
    <% end %>
     </div>
   </div>
+  <% @comments.each do |comment| %>
+    <p>レビュー：<%= comment.comment_content %></p>
+    <p>評価：<%= comment.rate %>点 </h4>
+    <div id="rate-<%= comment.id %>"></div>
+    <script>
+          $('#rate-<%= comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= comment.star %>,
+        });
+    </script> 
+<% end %>
 </div>
