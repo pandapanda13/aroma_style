@@ -1,11 +1,27 @@
 <div class="container">
   <div class="row">
-    <p class=""><%= @item.name %> のレビュー一覧</p>
+    <p class="title offset-2"><%= @item.name %> のレビュー 一覧</p>
   </div>
+  
   <div class="row">
     <% @comments.each do |comment| %>
-     <%= comment.comment_content %>
-     <%= comment.rate %>
-    <% end %>
-  </div>
+    <div class="card col-8 offset-2 mt-2">
+      
+   
+    <div id="rate-<%= comment.id %>"></div>
+    <script>
+          $('#rate-<%= comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= comment.rate %>,
+        });
+    </script> 
+    <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
+   </div>  
+   <% end %>
+   
+ </div>
 </div>

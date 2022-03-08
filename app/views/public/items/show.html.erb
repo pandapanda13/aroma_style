@@ -45,6 +45,7 @@
    <% end %>
     </div>
   </div>
+  <div class="row">
   <% @comments.each do |comment| %>
     <p>レビュー：<%= comment.comment_content %></p>
     <p>評価：<%= comment.rate %>点 </h4>
@@ -56,8 +57,9 @@
             starOn : '<%= asset_path('star-on.png') %>',
             starHalf: '<%= asset_path('star-half.png') %>',
             half: true,
-            score: <%= comment.star %>,
+            score: <%= comment.rate %>,
         });
     </script> 
 <% end %>
+</div>
 </div>
