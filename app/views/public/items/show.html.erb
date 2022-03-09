@@ -1,7 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="image col-3 offset-1 mt-5">
-      <%= image_tag @item.image_id, size: "300x240" %>
+      <%= image_tag @item.image_id, size: "300x240" %><br>
+      <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
+      <p>レビュー
+      <%= link_to item_comments_path(@item) do %> (<%= @item.comments.count %>)
+      <% end %></p>
+       
     </div>
 
     <div class="col-6 offset-1 mt-5">
@@ -45,21 +50,16 @@
    <% end %>
     </div>
   </div>
-  <div class="row">
-  <% @comments.each do |comment| %>
-    <p>レビュー：<%= comment.comment_content %></p>
-    <p>評価：<%= comment.rate %>点 </h4>
-    <div id="rate-<%= comment.id %>"></div>
-    <script>
-          $('#rate-<%= comment.id %>').raty({
-            size: 36,
-            starOff:  '<%= asset_path('star-off.png') %>',
-            starOn : '<%= asset_path('star-on.png') %>',
-            starHalf: '<%= asset_path('star-half.png') %>',
-            half: true,
-            score: <%= comment.rate %>,
-        });
-    </script> 
-<% end %>
-</div>
+  <script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+　</script>
+
 </div>

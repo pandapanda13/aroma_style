@@ -7,4 +7,13 @@ class Item < ApplicationRecord
   def add_tax_price
   (self.price * 1.10).floor
   end
+
+   def avg_score
+    unless self.comments.empty?
+      comments.average(:rate).round(1)
+    else
+      0.0
+    end
+   end
+
 end

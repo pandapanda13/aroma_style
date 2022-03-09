@@ -1,2 +1,32 @@
-<h1>Public::Comments#edit</h1>
-<p>Find me in app/views/public/comments/edit.html.erb</p>
+<div class="container">
+ <div class="row">
+    <p class="h5 col-8 offset-2 mt-4 text-center">レビュー編集</p>
+ </div>
+
+ <%= form_with model: @comment, url:comment_path(@comment), local:true do |f| %>
+ <div class="row">
+    <label for="rate": class="col-2 offset-2 mt-3">星評価</label>
+    <div id="rate-<%= @comment.id %>"></div>
+    <script>
+          $('#rate-<%= @comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= @comment.rate %>,
+        });
+    </script>
+
+ </div>
+ <div class="row">
+    <label for="comment_content": class="col-2 offset-2 mt-3">レビュー</label>
+    <div class="col-8 mt-3"><%= f.text_area :comment_content %></div>
+ </div>
+ <div class="row">
+    <div class="col-2 offset-4 mt-4">
+      <%= f.submit :編集内容を保存, class: 'btn btn-outline-success py-2 px-3' %>
+    </div>
+ </div>
+ <% end %>
+</div>

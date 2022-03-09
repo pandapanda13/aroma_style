@@ -7,7 +7,7 @@
     <% @comments.each do |comment| %>
     <div class="card col-8 offset-2 mt-2">
 
-    <p class="mb-auto">投稿者：<%= comment.customer.nickname %> さん</p>
+    <p class="mb-auto mt-2">投稿者：<%= comment.customer.nickname %> さん</p>
     <div id="rate-<%= comment.id %>"></div>
     <script>
           $('#rate-<%= comment.id %>').raty({

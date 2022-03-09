@@ -5,6 +5,7 @@ class Public::CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
   end
 
   def new
@@ -25,9 +26,15 @@ class Public::CommentsController < ApplicationController
   end
 
   def update
+    comment = Comment.find(params[:id])
+    comment.update(comment_params)
+    redirect_to customers_mypage_path(current_customer)
   end
 
   def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to customers_mypage_path(current_customer)
   end
 
   private

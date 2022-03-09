@@ -32,6 +32,35 @@
     </table>
    </div>
   </div>
+  <div class="row">
+   <div class="col-3 offset-3 mt-4">
+     <p class="h5 px-4">レビュー履歴</p>
+   </div>
+      <% @comments.each do |comment| %>
+    <div class="card col-6 offset-3 mt-2">
+    <p class="mt-1 font-weight-bold"><%= comment.item.name %></p>
+    <div id="rate-<%= comment.id %>"></div>
+    <script>
+          $('#rate-<%= comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= comment.rate %>,
+        });
+    </script>
+    <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
+    <div class="button text-right">
+    <%= link_to "編集", edit_comment_path(comment), class: 'btn btn-outline-success' %>
+    <%= link_to "削除", comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
+    </div>
+   </div>
+   <% end %>
+
+   </div>
+
+  </div>
 
 
 
