@@ -1,14 +1,15 @@
 <div class="container">
   <div class="row">
-   <p class="title col-6 px-4"><%= @customer.name %>　様　顧客詳細</p>
+   <p class="title col-3 offset-3 mt-4"><%= @customer.name %>　様　顧客詳細</p>
   </div>
   <div class="row">
-   <div class="col-4 offset-2 mt-3">
+   <div class="col-5 offset-7 mt-3">
     <%= link_to "編集する", edit_admin_customer_path(@customer.id), class: 'btn btn-outline-success' %>
    </div>
   </div>
   <div class="row">
-    <table class="table-bordered mt-3 offset-2 center-block">
+    <div class="col-10 offset-1 mt-2">
+    <table class="table-bordered border-dark mx-auto">
       <thead>
         <tr><th class="px-2 py-2">会員ID</th><td class="px-2"><%= @customer.id %></td></tr>
         <tr><th class="px-2 py-2">氏名</th><td class="px-2"><%= @customer.name %></td></tr>
@@ -24,6 +25,33 @@
                               <% end %></td></tr>
       </thead>
     </table>
+    </div>
   </div>
+  <div class="row">
+   <div class="col-3 offset-3 mt-4">
+     <p class="h5 px-4">レビュー履歴</p>
+   </div>
+      <% @comments.each do |comment| %>
+    <div class="card col-6 offset-3 mt-2">
+    <p class="mt-1 font-weight-bold"><%= comment.item.name %></p>
+    <div id="rate-<%= comment.id %>"></div>
+    <script>
+          $('#rate-<%= comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= comment.rate %>,
+        });
+    </script>
+    <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
+    <div class="button text-right">
+    <%= link_to "編集", edit_admin_comment_path(comment), class: 'btn btn-outline-success' %>
+    <%= link_to "削除", admin_comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
+    </div>
+   </div>
+   <% end %>
+   </div>
   
 </div>

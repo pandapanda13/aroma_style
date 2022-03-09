@@ -5,6 +5,10 @@
  <div class="row mt-5">
   <div class="image col-5">
     <%= image_tag @item.image_id, size: "300x240"%>
+    <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
+      <p>レビュー
+      <%= link_to admin_item_comments_path(@item) do %> (<%= @item.comments.count %>)
+      <% end %></p>
   </div>
 
   <div class="col-2">
@@ -28,7 +32,17 @@
     <% end %>
     <p><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
     <div class="text-right"><%= link_to "編集する", edit_admin_item_path(@item.id), class: 'btn btn-outline-success' %></div>
-
   </div>
  </div>
+ <script>
+  $('.average-review-rating').raty({
+    readOnly: true,
+    starOn: "<%= asset_path('star-on.png') %>",
+    starOff: "<%= asset_path('star-off.png') %>",
+    starHalf: "<%= asset_path('star-half.png') %>",
+    score: function() {
+      return $(this).attr('data-score')
+    }
+  });
+　</script>
 </div>

@@ -37,11 +37,11 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :customers, only:[:index, :show, :edit, :update]
   end
+
   namespace :admin do
-    resources :comments, only:[:index, :edit, :show, :update, :destroy]
-  end
-  namespace :admin do
-    resources :items, except: [:destroy]
+    resources :items, except: [:destroy] do
+     resources :comments, only:[:index, :edit, :update, :destroy], shallow: true
+   end
   end
   namespace :admin do
     get 'homes/top'

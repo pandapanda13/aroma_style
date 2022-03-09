@@ -7,6 +7,7 @@ class Admin::CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id])
+    @comments = @customer.comments
   end
 
   def edit

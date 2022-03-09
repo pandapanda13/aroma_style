@@ -1,2 +1,30 @@
-<h1>Admin::Comments#index</h1>
-<p>Find me in app/views/admin/comments/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <p class="title offset-2"><%= @item.name %> のレビュー 一覧</p>
+  </div>
+
+  <div class="row">
+    <% @comments.each do |comment| %>
+    <div class="card col-8 offset-2 mt-2">
+
+    <p class="mb-auto mt-2">投稿者：<%= comment.customer.nickname %> さん</p>
+    <div id="rate-<%= comment.id %>"></div>
+    <script>
+          $('#rate-<%= comment.id %>').raty({
+            size: 36,
+            starOff:  '<%= asset_path('star-off.png') %>',
+            starOn : '<%= asset_path('star-on.png') %>',
+            starHalf: '<%= asset_path('star-half.png') %>',
+            half: true,
+            score: <%= comment.rate %>,
+        });
+    </script>
+    <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
+    <div class="button text-right mb-2">
+    <%= link_to "編集", edit_admin_comment_path(comment), class: 'btn btn-outline-success' %>
+    <%= link_to "削除", admin_comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
+    </div>
+   </div>
+   <% end %>
+ </div>
+</div>
