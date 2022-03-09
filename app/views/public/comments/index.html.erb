@@ -2,12 +2,12 @@
   <div class="row">
     <p class="title offset-2"><%= @item.name %> のレビュー 一覧</p>
   </div>
-  
+
   <div class="row">
     <% @comments.each do |comment| %>
     <div class="card col-8 offset-2 mt-2">
-      
-   
+
+    <p class="mb-auto">投稿者：<%= comment.customer.nickname %> さん</p>
     <div id="rate-<%= comment.id %>"></div>
     <script>
           $('#rate-<%= comment.id %>').raty({
@@ -18,10 +18,10 @@
             half: true,
             score: <%= comment.rate %>,
         });
-    </script> 
+    </script>
     <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
-   </div>  
+   </div>
    <% end %>
-   
+
  </div>
 </div>

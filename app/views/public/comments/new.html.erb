@@ -4,8 +4,8 @@
  </div>
 
  <div class="row">
-
   <div class="col-8 offset-2 mt-2 text-center">
+
    <%= form_with model:@comment, url: item_comments_path(@item), method: :post, local:true do |f| %>
    <div id="star">
         <%= f.label :rate,  "星評価 (※必須)"  %>
@@ -15,8 +15,9 @@
   <div class="col-8 offset-2 mt-2 text-center">
    <%= f.text_area :comment_content, placeholder: "星評価のみでも投稿できます", size: "42x5" %><br>
   </div>
+  　<p class="h5 offset-3 text-left">表示名:    <%= current_customer.nickname %>  さん</p>
  </div>
-    <%= f.submit "投稿", class: 'col-4 offset-4  btn btn-block btn-outline-success' %>
+    <%= f.submit "投稿", class: 'col-4 offset-4 mt-2 btn btn-block btn-outline-success' %>
   <% end %>
 </div>
 
