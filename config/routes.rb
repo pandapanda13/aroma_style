@@ -23,6 +23,7 @@ Rails.application.routes.draw do
     resources :cart_items, only:[:index, :create, :update, :destroy]
   end
   scope module: 'public' do
+    get 'items/search'
     resources :items, only:[:index, :show] do
      resources :comments, shallow: true
     end
@@ -46,6 +47,9 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'homes/top'
   end
+
+
+
 
 devise_for :customers,skip: [:passwords], controllers: {
   registrations: "public/registrations",

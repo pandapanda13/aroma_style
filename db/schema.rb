@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_09_031500) do
+ActiveRecord::Schema.define(version: 2022_03_10_075229) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -106,6 +106,7 @@ ActiveRecord::Schema.define(version: 2022_03_09_031500) do
     t.datetime "remember_created_at"
     t.datetime "remember_updated_at"
     t.boolean "blend_flag", default: false
+    t.text "blend_example"
   end
 
   create_table "order_details", force: :cascade do |t|

@@ -1,7 +1,15 @@
 class Public::ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: [:show, :index, :search]
+  before_action :search_item, only: [:index, :search]
+
+
   def index
     @items = Item.all
+   
+  end
+
+  def search
+    @results = @a.result(distinct: true).order('created_at DESC')
   end
 
   def show
@@ -13,8 +21,10 @@ class Public::ItemsController < ApplicationController
 
   private
   def item_params
-   params.require(:item).permit(:name,:introduction,:image_id, :price, :blend_flag, :rate, :comment_content)
+   params.require(:item).permit(:name,:introduction, :image_id, :price, :blend_flag, :rate, :comment_content)
   end
-
-
+  
+  def search_item
+    @a = Item.ransack(params[:q])
+  end
 end

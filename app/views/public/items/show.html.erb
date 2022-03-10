@@ -13,6 +13,7 @@
       <h4 class="item-name mb-3"><%= @item.name %></h4>
       <p class="h6">容量：<%= @item.volume %></p>
       <p><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
+      <p>おすすめブレンド：　<%= @item.blend_example %></p>
       <P class="font-weight-bold"><%= @item.add_tax_price.to_s (:delimited) %>
          円(税込)</P>
 

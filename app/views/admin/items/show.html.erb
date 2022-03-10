@@ -3,7 +3,7 @@
   <p class="title col-2 offset-1 px-4">商品詳細</p>
  </div>
  <div class="row mt-5">
-  <div class="image col-5">
+  <div class="image col-4">
     <%= image_tag @item.image_id, size: "300x240"%>
     <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
       <p>レビュー
@@ -11,29 +11,29 @@
       <% end %></p>
   </div>
 
-  <div class="col-2">
-    <p class="">商品名</p>
-    <p class="">容量</p>
-    <p class="">税込価格（税抜価格）</p>
-    <p class="">製品ジャンル</p>
-    <p class="">商品説明</p>
+  <div class="col-7">
+    <table class="table">
+      <thead>
+        <tr><th class="w-50">商品名</th><td class="w-50 h5"><%= @item.name %></td></tr>
+        <tr><th>容量</th><td><%= @item.volume %></td></tr>
+        <tr><th>税込価格（税抜価格)</th><td><%= @item.add_tax_price.to_s (:delimited) %>
+                                            (
+                                           <%= @item.price.to_s (:delimited) %>) 円</td></tr>
+        <tr><th class="align-baseline">製品ジャンル</th><td class="align-baseline"><% if @item.blend_flag == true %>
+                                     <p><%= @item.blend_flag ="ブレンド商品" %></p>
+                                     <% else %>
+                                     <p><%= @item.blend_flag ="通常商品" %></p>
+                                     <% end %></td></tr>
+        <tr><th class="align-baseline">商品説明</th><td><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></td></tr>
+        <tr><th class="align-baseline">おすすめブレンド</th><td class="border-bottom"><%= @item.blend_example %></td></tr>
+      </thead>
+    </table>
+    <div class="text-right "><%= link_to "編集する", edit_admin_item_path(@item.id), class: 'btn btn-outline-success mt-1' %></div>
   </div>
-  <div class="col-4">
-    <p><%= @item.name %></p>
-    <p><%= @item.volume %></p>
 
-    <p><%= @item.add_tax_price.to_s (:delimited) %>
-    (
-    <%= @item.price.to_s (:delimited) %>)円
-    <% if @item.blend_flag == false %>
-     <p><%= blend_flag = "通常商品" %></p>
-    <% else %>
-     <p><%= blend_flag = "ブレンド商品" %></p>
-    <% end %>
-    <p><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
-    <div class="text-right"><%= link_to "編集する", edit_admin_item_path(@item.id), class: 'btn btn-outline-success' %></div>
-  </div>
- </div>
+
+
+
  <script>
   $('.average-review-rating').raty({
     readOnly: true,

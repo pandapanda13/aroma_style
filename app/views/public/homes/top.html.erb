@@ -1,2 +1,30 @@
-<h1>Public::Homes#top</h1>
-<p>Find me in app/views/public/homes/top.html.erb</p>
+<div class="container">
+ <div class="row mt-1 h-25">
+   <P class="h4 col-11 offset-1 text-secondary">NEW!</P> 
+   <% @items.each do |item| %>
+   <div class="card-home col-2 offset-1">
+     <%= link_to item_path(item), class: "card-home" do %>
+      <div class="image"><%= image_tag item.image_id, size: "180x120" %></div>
+      <p class="card-text"><%= item.name %></p>
+      <p class="card-text"><%= item.volume %></p>
+      <p class="card-text">¥<%= item.price.to_s (:delimited) %></p>
+     <% end %>
+   </div>
+   <% end %>
+  </div>
+  
+ <div class="row mt-1 h-25">
+ <P class="h4 col-11 offset-1 text-secondary mt-3">評価数ランキング</P> 
+ <% @item_comment_ranks.each.with_index(1) do |item, i| %>
+   <div class="card-home col-2 offset-1">
+  <%= link_to item_path(item), class: "card-home" do %>
+      <p class="h5 text-secondary">No.<%= i %></p>
+      <div class="image"><%= image_tag item.image_id, size: "180x120" %></div>
+      <p class="card-text"><%= item.name %></p>
+      <p class="card-text"><%= item.volume %></p>
+      <p class="card-text">¥<%= item.price.to_s (:delimited) %></p>
+  <% end %>
+  </div>
+ <% end %>
+ </div>
+</div>

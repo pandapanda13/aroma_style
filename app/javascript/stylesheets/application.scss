@@ -17,13 +17,12 @@
   filter: opacity(70%);
 }
 
-.items {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .item-name {
   border-bottom: 2px solid grey;
 }
 
-
+.card-home {
+  width: 180px;
+  height: 2000px;
+}

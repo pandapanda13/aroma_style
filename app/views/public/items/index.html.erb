@@ -1,8 +1,18 @@
 <div class="container">
   <div class="row">
-    <p class=" offset-2 h4 px-3 mb-4 grey">Products</p>
+    <p class="offset-2 h4 px-3 mb-4 grey">Products</p>
   </div>
-
+  <div class="row">
+    <div class="offset-2 col-8 mb-4">
+      <%= search_form_for @a, url: items_search_path	 do |f| %>
+        <%= f.search_field :name_or_introduction_cont, placeholder: 'search' %>
+        <%= f.button :type => "submit", style: 'border-style: none;' do %>
+         <i class='fa-solid fa-magnifying-glass'></i>
+       <% end %>
+       
+      <% end %>  
+    </div>
+  </div>
 
   <div class="row">
     <div class="items col-9 offset-2">

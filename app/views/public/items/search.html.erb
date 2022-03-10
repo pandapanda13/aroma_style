@@ -1,0 +1,21 @@
+ <div class="container">
+  <p class="title">検索結果一覧</p>
+   
+    <div class="row">
+      <% if @results.length !=0 %>
+          <% @results.each do |result| %>
+            <div class="item-result col-3 offset-1">
+              <%= link_to item_path(result.id), class: "item-link" do%>
+               <div class="image mb-2 mr-5">
+               <%= image_tag result.image_id, size: "220x180" %>
+               </div>
+               <p><%= result.name %><%= result.volume %></p>
+               <p><%= result.price %>円</p>
+              <% end %>
+            </div>
+          <% end %>
+      <% else %>
+        <h5 class="alert">該当する商品はありません</h5>
+      <% end %>
+    </div>
+</div>
