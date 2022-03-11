@@ -22,7 +22,11 @@
   border-bottom: 2px solid grey;
 }
 
-.card-home {
-  width: 180px;
-  height: 2000px;
+
+.bg {
+    background-image: image-url('haikei.jpg');
+    background-size:  cover;
 }
+// Place all the styles related to the public/homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
