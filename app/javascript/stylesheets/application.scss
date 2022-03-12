@@ -10,7 +10,7 @@
   display: inline-block;
   border-top: 2px solid grey;
   text-align: center;
-  color: #grey;
+  color: grey;
 }
 
 .image {
@@ -22,10 +22,24 @@
   border-bottom: 2px solid grey;
 }
 
+.items{
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .bg {
-    background-image: image-url('haikei.jpg');
-    background-size:  cover;
+  width: 1500px;
+  height: 700px;
+  background-image: url('../../assets/images/haikei.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: opacity(80%);
+
+}
+.bg-text {
+  color: black;
 }
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
