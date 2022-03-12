@@ -2,11 +2,18 @@
  <div class="row">
     <p class="h5 col-8 offset-2 mt-4 text-center"><%= @item.name %>のレビュー投稿</p>
  </div>
+ <div class="h6 offset-4 text-danger">
+    <% if @comment.errors.any? %>
+     <% flash.each do |message_type, message| %>
+     <%= content_tag :div, message, class: message_type %>
+     <% end %>
+    <% end %>
+ </div>
   <%= form_with model:@comment, url: item_comments_path(@item), method: :post, local:true do |f| %>
  <div class="row">
   <div class="col-8 offset-2 mt-2 text-center">
 
-   
+
    <div id="star">
         <%= f.label :rate,  "星評価 (※必須)"  %>
         <%#= f.text_field :rate, id: :star %>

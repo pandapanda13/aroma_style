@@ -10,9 +10,7 @@ Rails.application.routes.draw do
     get 'customers/unsubscribe'
     patch 'customers/withdraw'
   end
-  #scope module: 'public' do
-    #resources :comments
-  #end
+
   scope module: 'public' do
     get 'orders/thanks'
     post 'orders/confirm'
@@ -31,8 +29,12 @@ Rails.application.routes.draw do
   scope module: 'public' do
     root to: 'homes#top'
     get 'about', to: 'homes#about'
+  end  
 
+  scope module: 'public' do
+    resources :contacts, only: [:new, :create]
   end
+
   namespace :admin do
     resources :orders, only:[:show, :update]
   end

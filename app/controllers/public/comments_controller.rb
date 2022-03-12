@@ -15,13 +15,14 @@ class Public::CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    # @item = Item.find(params[:item_id])
     @comment.item_id = params[:item_id]
     if @comment.save
      redirect_to item_comments_path(@comment.item)
     else
-      #@item = Item.find(params[:id])
-      render new_item_comment_path
+      
+      @item = Item.find(params[:item_id])
+      flash[:danger] = 'コメントの投稿に失敗しました'
+      render :new
     end
   end
 

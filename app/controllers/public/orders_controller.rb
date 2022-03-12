@@ -10,8 +10,8 @@ class Public::OrdersController < ApplicationController
     @order = Order.new (order_params)
     @order.bill = params[:order][:bill]
     @order.customer_id = current_customer.id
-    @order.shipping_fee = 800
-    if @order.save!
+    @order.shipping_fee = 500
+    if @order.save
      cart_items.each do |cart_item|
        @order_detail = OrderDetail.new
        @order_detail.item_id = cart_item.item_id
@@ -27,7 +27,6 @@ class Public::OrdersController < ApplicationController
       @order = Order.new(order_params)
       render :new
     end
-
   end
 
   def thanks
@@ -49,15 +48,14 @@ class Public::OrdersController < ApplicationController
   def confirm
     params[:order][:payment] = params[:order][:payment].to_i
     @order = Order.new(order_params)
+    @order.customer_id = current_customer.id
     @cart_items = current_customer.cart_items
     if params[:select_address] == "0"
       @order.postal_code = current_customer.postal_code
       @order.address = current_customer.address
       @order.name = current_customer.name
     elsif params[:select_address] == "1"
-      @order.postal_code = params[:order][:postal_code]
-			@order.address = params[:order][:address]
-			@order.name = params[:order][:name]
+      render :new,{order:@order} and return unless @order.valid?
     end
   end
 

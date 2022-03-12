@@ -3,15 +3,23 @@
       <p class="title col-2 offset-1 mt-3">ご注文情報入力</p>
   </div>
 
+ <div class="h6 offset-4 text-danger">
+    <% if @order.errors.any? %>
+     <% @order.errors.full_messages.each do |message| %>
+       <%= content_tag :div, message %>
+     <% end %>
+    <% end %>
+ </div>
+
   <%= form_with model: @order, url: orders_confirm_path, local:true do |f| %>
   <div class="row">
     <div class="col-2 offset-1 mt-3">
       <p class="h5">お支払い方法</p>
     </div>
     <div class="col-3 mt-3 h5">
-      <%= f.radio_button :payment, 0 %>
+      <%= f.radio_button :payment, 0, checked: @order.payment.to_s == 'credit_card' %>
       <%= f.label :payment,"クレジットカード", value: 0 %><br>
-      <%= f.radio_button :payment, 1 %>
+      <%= f.radio_button :payment, 1, checked: @order.payment.to_s == 'transfer' %>
       <%= f.label :payment, "銀行振込", value: 1 %>
     </div>
   </div>
@@ -21,12 +29,12 @@
     </div>
 
     <div class="col-9 h5 mt-3">
-      <%= radio_button_tag :select_address, 0, checked: true %>
+      <%= radio_button_tag :select_address, 0, (params["select_address"].nil? ? '0' : params["select_address"].to_s) == '0' %>
       <%= f.label :select_address, "ご登録の住所へ配送" %><br>
        <P class="address ml-3 h5">〒<%= current_customer.postal_code %>  <%= current_customer.address %><br><%= current_customer.name %>  様</P>
     </div>
     <div class="col-9 h5 offset-3 mt-3">
-      <%= radio_button_tag :select_address, 1 %>
+      <%= radio_button_tag :select_address, 1, (params["select_address"].nil? ? '0' : params["select_address"].to_s) == '1' %>
       <%= f.label :select_address, "ご登録以外の住所へ配送" %><br>
     </div>
   </div>
@@ -54,7 +62,7 @@
       <%= f.text_field :name %> 様
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-4 offset-4">
       <%= f.submit "確認画面へ進む", class: 'btn btn-outline-success btn-block mt-4' %>

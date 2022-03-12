@@ -1,5 +1,5 @@
 class Public::ItemsController < ApplicationController
-  before_action :authenticate_user!, except: [:show, :index, :search]
+  before_action :authenticate_customer!, except: [:show, :index, :search]
   before_action :search_item, only: [:index, :search]
 
 

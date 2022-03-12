@@ -10,9 +10,13 @@ class Public::CustomersController < ApplicationController
   end
 
   def update
-   customer = current_customer
-   customer.update(customer_params)
-   redirect_to customers_mypage_path(current_customer)
+   @customer = current_customer
+   if @customer.update(customer_params)
+    redirect_to customers_mypage_path(current_customer)
+   else
+     flash[:danger] = 'マイページの編集に失敗しました'
+     render :edit
+   end
   end
 
   def unsubscribe

@@ -1,7 +1,14 @@
 <div class="container">
   <div class="row">
    <div class="col-10 offset-2 mt-4">
-     <p class="h5">登録情報編集</p>
+     <p class="h5">マイページ編集</p>
+   </div>
+   <div class="h6 offset-2 text-danger">
+    <% if @customer.errors.any? %>
+     <% flash.each do |message_type, message| %>
+     <%= content_tag :div, message, class: message_type %>
+     <% end %>
+    <% end %>
    </div>
   </div>
    <%= form_with model: @customer, url: customers_update_path, local:true do |f| %>
