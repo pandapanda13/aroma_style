@@ -1,3 +1,4 @@
+
 <div class="container">
   <div class="row">
     <div class="image col-3 offset-1 mt-5">
@@ -9,7 +10,7 @@
        
     </div>
 
-    <div class="col-6 offset-1 mt-5">
+    <div class="item-show col-6 offset-1 mt-5">
       <h4 class="item-name mb-3"><%= @item.name %></h4>
       <p class="h6">容量：<%= @item.volume %></p>
       <p><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
@@ -63,4 +64,5 @@
   });
 　</script>
 
+</div>
 </div>

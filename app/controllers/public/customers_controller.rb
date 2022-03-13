@@ -2,7 +2,7 @@ class Public::CustomersController < ApplicationController
   before_action :authenticate_customer!
   def show
    @customer = current_customer
-   @comments = current_customer.comments
+   @comments = current_customer.comments.page(params[:page]).per(3)
   end
 
   def edit

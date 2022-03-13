@@ -1,7 +1,5 @@
+<div class="bc">
 <div class="container">
- <div class="row my-2">
-  <p class="title col-2 offset-1 px-4">商品詳細</p>
- </div>
  <div class="row mt-5">
   <div class="image col-4">
     <%= image_tag @item.image_id, size: "300x240"%>
@@ -12,7 +10,7 @@
   </div>
 
   <div class="col-7">
-    <table class="table">
+    <table class="table item-show">
       <thead>
         <tr><th class="w-50">商品名</th><td class="w-50 h5"><%= @item.name %></td></tr>
         <tr><th>容量</th><td><%= @item.volume %></td></tr>
@@ -30,10 +28,6 @@
     </table>
     <div class="text-right "><%= link_to "編集する", edit_admin_item_path(@item.id), class: 'btn btn-outline-success mt-1' %></div>
   </div>
-
-
-
-
  <script>
   $('.average-review-rating').raty({
     readOnly: true,
@@ -45,4 +39,5 @@
     }
   });
 　</script>
+</div>
 </div>

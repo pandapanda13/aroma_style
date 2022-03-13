@@ -1,6 +1,7 @@
+<div class="bc">
 <div class="container">
   <div class="row">
-   <p class="title col-3 offset-3 mt-4"><%= @customer.name %>　様　顧客詳細</p>
+   <p class="h4 col-4 offset-3 text-secondary"><%= @customer.name %>　様　顧客詳細</p>
   </div>
   <div class="row">
    <div class="col-5 offset-7 mt-3">
@@ -11,14 +12,14 @@
     <div class="col-10 offset-1 mt-2">
     <table class="table-bordered border-dark mx-auto">
       <thead>
-        <tr><th class="px-2 py-2">会員ID</th><td class="px-2"><%= @customer.id %></td></tr>
-        <tr><th class="px-2 py-2">氏名</th><td class="px-2"><%= @customer.name %></td></tr>
-         <tr><th class="px-2 py-2">フリガナ</th><td class="px-2"><%= @customer.name_kana %></td></tr>
-         <tr><th class="px-2 py-2">表示名</th><td class="px-2"><%= @customer.nickname %></td></tr>
-         <tr><th class="px-2 py-2">住所</th><td class="px-2 pr-5">〒<%= @customer.postal_code %> <%= @customer.address %></td></tr>
-         <tr><th class="px-2 py-2">電話番号</th><td class="px-2"><%= @customer.telephone_number %></td></tr>
-         <tr><th class="px-2 py-2">メールアドレス</th><td class="px-2"><%= @customer.email %></td></tr>
-         <tr><th class="px-2 py-2">ステータス</th><td class="pt-2 px-2"><% if @customer.is_active == true %>
+        <tr><th class="px-2 py-2 text-secondary">会員ID</th><td class="px-2"><%= @customer.id %></td></tr>
+        <tr><th class="px-2 py-2 text-secondary">氏名</th><td class="px-2"><%= @customer.name %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">フリガナ</th><td class="px-2"><%= @customer.name_kana %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">表示名</th><td class="px-2"><%= @customer.nickname %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">住所</th><td class="px-2 pr-5">〒<%= @customer.postal_code %> <%= @customer.address %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">電話番号</th><td class="px-2"><%= @customer.telephone_number %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">メールアドレス</th><td class="px-2"><%= @customer.email %></td></tr>
+         <tr><th class="px-2 py-2 text-secondary">ステータス</th><td class="pt-2 px-2"><% if @customer.is_active == true %>
                               <p class="font-weight-bold"><%= is_active = "有効" %></p>
                               <% else %>
                               <p class="text-black-50 font-weight-bold"><%= is_active = "退会" %></p>
@@ -29,11 +30,11 @@
   </div>
   <div class="row">
    <div class="col-3 offset-3 mt-4">
-     <p class="h5 px-4">レビュー履歴</p>
+     <p class="h5 px-4 text-secondary">レビュー履歴</p>
    </div>
       <% @comments.each do |comment| %>
-    <div class="card col-6 offset-3 mt-2">
-    <p class="mt-1 font-weight-bold"><%= comment.item.name %></p>
+    <div class="card review-card col-6 offset-3 mt-2">
+    <p class="mt-1 font-weight-bold text-secondary"><%= comment.item.name %></p>
     <div id="rate-<%= comment.id %>"></div>
     <script>
           $('#rate-<%= comment.id %>').raty({
@@ -45,13 +46,16 @@
             score: <%= comment.rate %>,
         });
     </script>
-    <p class="border-top mt-2">レビュー：<%= comment.comment_content %></p>
+    <p class="border-top mt-2 text-secondary">レビュー：<%= comment.comment_content %></p>
     <div class="button text-right">
     <%= link_to "編集", edit_admin_comment_path(comment), class: 'btn btn-outline-success' %>
     <%= link_to "削除", admin_comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
     </div>
    </div>
    <% end %>
+   <div class="pagination col-8 offset-2">
+    <%= paginate @comments %>
+  </div>
    </div>
-  
+</div>
 </div>

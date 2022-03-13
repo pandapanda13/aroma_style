@@ -1,11 +1,12 @@
+<div class="bc">
 <div class="container">
  <div class="row">
-  <p class="title col-2 offset1">ご注文内容確認 </p>
+  <p class="title h4 text-secondary col-3 offset1">ご注文内容確認 </p>
  </div>
  <div class="row">
    <table class="table-bordered col-9 offset-1 mt-5">
      <thead>
-       <tr>
+       <tr class="text-secondary">
          <th class="py-2 px-4 text-center">商品名</th>
          <th class="py-2 px-3 text-center">容量</th>
          <th class="py-2 px-3 text-center">価格（税込）</th>
@@ -34,17 +35,17 @@
     <div class="col-5 offset-7 mt-2">
       <table class="total-table table-bordered">
         <thed>
-          <tr><th class="py-2 px-5">送料</th><td class="py-2 px-4"><%= @order.shipping_fee %>円</td></tr>
-          <tr><th class="py-2 px-5">商品合計</th><td class="py-2 px-4"><%= @total.to_s (:delimited) %>円</td></tr>
+          <tr><th class="py-2 px-5 text-secondary">送料</th><td class="py-2 px-4"><%= @order.shipping_fee %>円</td></tr>
+          <tr><th class="py-2 px-5 text-secondary">商品合計</th><td class="py-2 px-4"><%= @total.to_s (:delimited) %>円</td></tr>
           <% @bill = @total + @order.shipping_fee.to_i %>
-          <tr><th class="py-2 px-5 font-weight-bold">請求合計</th><td class="py-2 px-4 font-weight-bold"><%= @bill.to_s (:delimited) %>円</td></tr>
+          <tr><th class="py-2 px-5 font-weight-bold text-secondary">請求合計</th><td class="py-2 px-4 font-weight-bold"><%= @bill.to_s (:delimited) %>円</td></tr>
         </thed>
       </table>
     </div>
   </div>
   <div class="row">
     <div class="col-2 offset-2 mt-5">
-      <p class="font-weight-bold h5">お支払い方法</p>
+      <p class="font-weight-bold h5 text-secondary">お支払い方法</p>
     </div>
     <div class="col-3 mt-5">
       <%= @order.payment_i18n %>
@@ -52,7 +53,7 @@
   </div>
   <div class="row">
     <div class="col-2 offset-2 mt-1">
-      <p class="font-weight-bold h5">お届け先</p>
+      <p class="font-weight-bold h5 text-secondary">お届け先</p>
     </div>
     <div class="col-6">
       <p class="mt-1">〒<%= @order.postal_code %>  <%= @order.address %><br>
@@ -68,5 +69,6 @@
    <%= f.hidden_field :payment, :value => @order.payment %>
    <div class="col-4 offset-4 mt-3"><%= f.submit "注文を確定する", class: 'btn btn-outline-success btn-block py-2 px-5 mt-4' %></div>
   <% end %>
+</div>
 </div>
 </div>

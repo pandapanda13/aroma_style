@@ -1,7 +1,8 @@
+ <div class="bc">
  <div class="container">
   <%= form_with(model: @contact, local: true) do |f| %>
     <div class='row'>
-        <p class='title col-8 offset-2 text-center'>お問い合わせフォーム</p>
+        <p class='title h5 col-8 offset-2 mt-5 text-secondary text-center'>お問い合わせフォーム</p>
     </div>
 
     <div class="row">
@@ -16,7 +17,7 @@
       <% end %>
       </div>
       <div class="col-8 offset-2 text-center">
-        <div class="contact-form">
+        <div class="contact-form mt-3">
             <div class="correct-text-field">
               <%= f.text_field :name, placeholder: "お名前", class: "input-form", size:"50" %>
             </div>
@@ -37,4 +38,5 @@
       </div>
   </div>
  <% end %>
+</div>
 </div>

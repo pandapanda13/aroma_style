@@ -1,17 +1,18 @@
+<div class="bc">
 <div class="conteiner">
   <div class="row">
-   <p class="title col-6 mt-4">注文履歴詳細</p>
+   <p class="h5 text-secondary col-6 offset-1 mt-4 mb-4">注文履歴詳細</p>
   </div>
   <div class="row">
     <table class="offset-2 col-5 center-block">
       <thead>
-        <tr><th class="py-2">購入者</th><td class="py-2"><%= link_to admin_customer_path(@order.customer) do %>
+        <tr><th class="py-2 text-secondary">購入者</th><td class="py-2"><%= link_to admin_customer_path(@order.customer) do %>
                        <%= @order.customer.name %> 様
                        <% end %></td></tr>
-        <tr><th class="py-2">注文日</th><td class="py-2"><%= @order.created_at.strftime('%Y/%m/%d') %></td></tr>
-        <tr><th class="py-2">配送先</th><td class="py-2">〒<%= @order.postal_code %><%= @order.address %><br><%= @order.name %> 様</td></tr>
-        <tr><th class="py-2">支払い方法</th><td class="py-2"><%= @order.payment_i18n %></td></tr>
-        <tr><th class="py-2">発送ステータス</th><td class="py-2"><%= form_with model: @order, url: admin_order_path(@order), local: true, method: :patch do |f| %>
+        <tr><th class="py-2 text-secondary">注文日</th><td class="py-2"><%= @order.created_at.strftime('%Y/%m/%d') %></td></tr>
+        <tr><th class="py-2 text-secondary">配送先</th><td class="py-2">〒<%= @order.postal_code %><%= @order.address %><br><%= @order.name %> 様</td></tr>
+        <tr><th class="py-2 text-secondary">支払い方法</th><td class="py-2"><%= @order.payment_i18n %></td></tr>
+        <tr><th class="py-2 text-secondary">発送ステータス</th><td class="py-2"><%= form_with model: @order, url: admin_order_path(@order), local: true, method: :patch do |f| %>
                                        <%= f.select :shipping_status, Order.shipping_statuses.keys.map {|k| [I18n.t("enums.order.shipping_status.#{k}"), k]} %>
                                        <%= f.submit "更新", class: 'btn btn-outline-success py-0' %>
                                        <% end %></td></tr>
@@ -23,7 +24,7 @@
   <div class="row">
     <table class="table-bordered col-6 offset-1 mt-4">
       <thed>
-        <tr>
+        <tr class="text-secondary">
           <th class="py-2 px-2">商品名</th>
           <th class="py-2 px-2">容量</th>
           <th class="py-2 px-2">単価(税込)</th>
@@ -55,11 +56,12 @@
       <% @bill = @total + @order.shipping_fee.to_i %>
        <table class="table-bordered">
          <thed>
-           <tr><th class="py-2 px-4">商品合計</th><td class="py-2 px-4"><%= @total.to_s (:delimited) %>円</td></tr>
-           <tr><th class="py-2 px-4">送料</th><td class="py-2 px-4"><%= @order.shipping_fee %>円</td></tr>
-           <tr><th class="font-weight-bold py-2 px-4">請求金額合計</th><td class="font-weight-bold py-2 px-4"><%= @bill.to_s (:delimited) %>円</td></tr>
+           <tr><th class="py-2 px-4 text-secondary">商品合計</th><td class="py-2 px-4"><%= @total.to_s (:delimited) %>円</td></tr>
+           <tr><th class="py-2 px-4 text-secondary">送料</th><td class="py-2 px-4"><%= @order.shipping_fee %>円</td></tr>
+           <tr><th class="font-weight-bold py-2 px-4 text-secondary">請求金額合計</th><td class="font-weight-bold py-2 px-4"><%= @bill.to_s (:delimited) %>円</td></tr>
          </thed>
        </table>
     </div>
   </div>
+</div>
 </div>

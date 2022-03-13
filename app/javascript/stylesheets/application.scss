@@ -14,14 +14,41 @@
 }
 
 .image {
-  filter: opacity(70%);
+  filter: opacity(60%);
+}
+
+.bc {
+  background-color: oldlace;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.admin-bc {
+  background-color: lavender;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+}
+
+.hbc {
+  background: -moz-linear-gradient(top, #FFF);
+  background: -webkit-linear-gradient(top, #FFF);
+  background: linear-gradient(to bottom, #FFF,oldlace 20%);
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
 }
 
 
 .item-name {
   border-bottom: 2px solid grey;
+  color: gray;
 }
 
+.item-show{
+  color: gray;
+}
 .items{
   display: flex;
   flex-wrap: wrap;
@@ -36,11 +63,34 @@
   justify-content: center;
   align-items: center;
   filter: opacity(80%);
-
 }
 .bg-text {
   color: black;
 }
+
+.pagination {
+  justify-content: center;
+}
+
+.pagination>li>a {
+  border: none;
+  color: #696969;
+  background-color: oldlace;
+}
+
+.pagination>.active>a {
+  background: red;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {
+  border-radius: 15px;
+}
+
+.review-card {
+  background-color: initial;
+}
+
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
