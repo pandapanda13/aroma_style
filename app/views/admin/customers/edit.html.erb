@@ -1,10 +1,11 @@
+<div class="bc">
 <div class="container">
   <div class="row">
-   <p class="title col-6 offset-2 px-4"><%= @customer.name %>  様  顧客詳細編集</p>
+   <p class="h4 col-6 offset-2 text-secondary"><%= @customer.name %>  様  顧客詳細編集</p>
   </div>
 
   <%= form_with model: @customer, url: admin_customer_path(@customer.id), local:true do |f| %>
-  <div class="row mt-3">
+  <div class="row mt-3 text-secondary">
     <p class="col-3 offset-2">会員ID</p>
     <div class="col-7"><%= @customer.id %></div>
 
@@ -36,8 +37,6 @@
    <%= f.label :is_active,"退会", value: false %></div>
    <div class="col-3 offset-5"><%= f.submit '変更を保存', class: 'btn btn-outline-success btn-block px-3 py-2' %></div>
 　</div>
-
-
-
 　<% end %>
+</div>
 </div>

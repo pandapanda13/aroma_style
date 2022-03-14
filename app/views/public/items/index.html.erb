@@ -1,7 +1,7 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-    <p class="title offset-2 h4 px-3 mb-4 text-secondary">商品一覧</p>
+    <p class="offset-2 h4 px-3 mb-4 text-secondary">商品一覧</p>
   </div>
   <div class="row">
     <div class="offset-2 col-8 mb-4">
@@ -16,20 +16,33 @@
   </div>
 
   <div class="row">
-    <div class="items col-9 offset-2">
+    <p class="offset-2 h5 mt-3 mb-4 text-secondary">ブレンド商品　(お好きな香りを組み合わせて作るオリジナルのアロマオイル）</p>
+    <div class="items col-10 offset-2">
+    <% @items_blend.each do |item_blend| %>
+      <%= link_to item_path(item_blend), class: "link" do %>
+      <div class="image mx-3 my-2">
+        <%= image_tag item_blend.image_id, size: "220x180" %>
+      </div>
+      <p class="ml-3"><%= item_blend.name %><%= item_blend.volume %>  <%= item_blend.price %>円</p>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="row">
+    <p class="offset-2 h5 mt-3 mb-4 text-secondary"> 通常商品</p>
+    <div class="items col-10 offset-2 ">
     <% @items.each do |item| %>
-      <%= link_to item_path(item) do %>
-      <div class="image mb-2 mr-5">
+      <%= link_to item_path(item), class: "link" do %>
+      <div class="image mx-3 my-2">
         <%= image_tag item.image_id, size: "220x180" %>
       </div>
-      <p><%= item.name %><%= item.volume %></p>
-      <p><%= item.price %>円</p>
+      <p class="ml-3"><%= item.name %><%= item.volume %>  <%= item.price %>円</p>
       <% end %>
     <% end %>
     </div>
     <div class="pagination col-8 offset-2">
     <%= paginate @items %>
-    </div>
+  </div>
+
   </div>
 </div>
 </div>

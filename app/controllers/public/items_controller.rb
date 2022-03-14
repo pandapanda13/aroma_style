@@ -4,8 +4,9 @@ class Public::ItemsController < ApplicationController
 
 
   def index
-    @items = Item.page(params[:page])
-   
+    @items_blend = Item.where(blend_flag: "true")
+    @items = Item.where(blend_flag: "false").page(params[:page]).per(6) 
+    Item
   end
 
   def search
@@ -23,7 +24,7 @@ class Public::ItemsController < ApplicationController
   def item_params
    params.require(:item).permit(:name,:introduction, :image_id, :price, :blend_flag, :rate, :comment_content)
   end
-  
+
   def search_item
     @a = Item.ransack(params[:q])
   end

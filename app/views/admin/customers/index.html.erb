@@ -1,18 +1,19 @@
+<div class="bc">
 <div class="container">
   <div class="row">
-   <p class="title col-2 px-4">顧客一覧</p>
+   <p class="h4 col-3 offset-2 mt-3 text-secondary">顧客一覧</p>
   </div>
-  　<table class="table-bordered offset-2 center-block">
-    <thed>
-      <tr class="text-center">
+  <table class="table-bordered offset-2  mt-3 center-block">
+   <thead>
+      <tr class="text-center text-secondary">
         <th class="py-2 px-2">会員ID</th>
         <th class="py-2 px-2">氏名</th>
         <th class="py-2 px-2">住所</th>
         <th class="py-2 px-2">メールアドレス</th>
         <th class="py-2 px-2">ステータス</th>
       </tr>
-    </thed>
-    <tbody>
+   </thead>
+   <tbody>
     <% @customers.each do |customer| %>
       <tr class="text-center">
         <td class="py-2 px-2"><%= customer.id %></td>
@@ -27,9 +28,11 @@
         </td>
       </tr>
     <% end %>
-    </tbody>
+   </tbody>
   </table>
-
+  <div class="pagination col-8 offset-2">
+    <%= paginate @customers %>
+  </div>
  </div>
 </div>
 </div>

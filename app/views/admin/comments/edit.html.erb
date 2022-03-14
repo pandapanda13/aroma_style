@@ -1,15 +1,16 @@
+<div class="bc">
 <div class="container">
  <div class="row">
-    <p class="h5 col-8 offset-2 mt-4 text-center">レビュー編集</p>
+    <p class="h4 col-8 offset-2 mt-4 mb-4 text-secondary">レビュー編集</p>
  </div>
 
  <%= form_with model: @comment, url: admin_comment_path(@comment), local:true do |f| %>
  <div class="row">
-    <label for="rate": class="col-2 offset-2 mt-3">星評価</label>
+    <label for="rate": class="col-2 offset-2 mt-1 text-secondary">星評価</label>
     <div id="rate-<%= @comment.id %>"></div>
     <script>
           $('#rate-<%= @comment.id %>').raty({
-            size: 36,
+            size: 33,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
             starHalf: '<%= asset_path('star-half.png') %>',
@@ -21,8 +22,8 @@
 
  </div>
  <div class="row">
-    <label for="comment_content": class="col-2 offset-2 mt-3">レビュー</label>
-    <div class="col-8 mt-3"><%= f.text_area :comment_content %></div>
+    <label for="comment_content": class="col-2 offset-2 mt-3 text-secondary">レビュー</label>
+    <div class="col-8 mt-3 "><%= f.text_area :comment_content, size: "45x4" %></div>
  </div>
  <div class="row">
     <div class="col-2 offset-4 mt-4">
@@ -30,4 +31,5 @@
     </div>
  </div>
  <% end %>
+</div>
 </div>
