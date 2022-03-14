@@ -33,21 +33,77 @@
     <% end %>
 　 </div>
 
-　<div class="top-bg h1 col-9 mt-2">Welcome To Aroma Style</div>
-　<div class="card topic-card" style="width:700px;">
-  <div class="row no-gutters">
-    <div class="col-lg-6">
-      <img class="card-img" src="assets/spring.jpg" alt="Card image">
+  <div class="right-container col-10 center-block">
+　 <div class="top-bg h1 col-9 offset-1 mt-2"> Welcome To Aroma Style</div>
+　 <% if @today == 3 || 4 || 5 %>
+  　<div class="card topic-card spring offset-1 mt-5" style="width:700px;">
+    <div class="row no-gutters">
+      <div class="col-lg-6">
+        <img class="card-img" src="assets/spring.jpg">
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body text-secondary">
+          <h4 class="card-title font-weight-bold">春のおすすめ</h4>
+          <p class="card-text">暖かくなってきました。新生活のスタートを迎える方も多いのではないでしょうか。<br>緊張を解きほぐすには
+          <%= link_to 'グレープフルーツ', 'items/12' %>
+          のフレッシュな香りを。また、花粉症や季節の変わり目の風邪の対策には
+          <%= link_to 'ユーカリ', 'items/14' %>や
+          <%= link_to 'ティーツリー', 'items/3' %>がおすすめです</p>
+        </div>
+      </div>
+     </div>
     </div>
-    <div class="col-lg-6">
-      <div class="card-body text-secondary">
-        <h4 class="card-title font-weight-bold">春のおすすめ</h4>
-        <p class="card-text">暖かくなってきました。新生活のスタートを迎える方も多いのではないでしょうか。<br>緊張を時ほどすにはグレープフルーツのフレッシュな香りを。また、花粉症や季節の変わり目の風邪の対策にはユーカリやティーツリーがおすすめです</p>
+  
+    <% #else @today == 6 || 7 || 8 %>
+  　<div class="card topic-card summer offset-1 mt-5" style="width:700px;">
+    <div class="row no-gutters">
+      <div class="col-lg-6">
+        <img class="card-img" src="assets/summer.jpg">
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body text-secondary">
+          <h4 class="card-title font-weight-bold">夏のおすすめ</h4>
+          <p class="card-text">暑さが厳しくなる夏にはハーブ系の香りがおすすめです。<br>
+          <%= link_to 'ペパーミント', 'items/12' %>や<%= link_to 'ローズマリー', 'items/12' %>
+          は清涼感たっぷりです。<br>
+          ブレンドオイルにもハーブ系をプラスしてみてはいかがでしょうか。</p>
+        </div>
       </div>
     </div>
-   </div>
-  </div>
-　  
+    </div>
+    <%# else @today == 9 || 10 || 11 %>
+    <div class="card topic-card autumn offset-1 mt-5" style="width:700px;">
+    <div class="row no-gutters">
+      <div class="col-lg-6">
+        <img class="card-img" src="assets/autumn.jpg">
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body text-secondary">
+          <h4 class="card-title font-weight-bold">秋のおすすめ</h4>
+          <p class="card-text">秋は気温の変化もあり体調管理をしっかりしたいですね。<br>
+         <%= link_to 'ラベンダー', 'items/7' %>は気分をゆったりと落ち着かせ<%= link_to 'ベルガモット', 'items/6' %>
+          は紅茶のアールグレイの香りにも使われており柑橘系の甘くフルーティーな香りが秋にぴったりです。</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    <%# elsif %>
+    <div class="card topic-card winter offset-1 mt-5" style="width:700px;">
+    <div class="row no-gutters">
+      <div class="col-lg-6">
+        <img class="card-img" src="assets/winter.jpg">
+      </div>
+      <div class="col-lg-6">
+        <div class="card-body text-secondary">
+          <h4 class="card-title font-weight-bold">冬のおすすめ</h4>
+          <p class="card-text">自然と室内で過ごす時間が増えがちな冬がやってきました。ぜひアロマオイルでリラックスしてみてください。<br>
+         特に冷える日には<%= link_to 'カモミール', 'items/18' %>で心と体を温め質の良い眠りを。また<%= link_to '柚子', 'items/16' %>
+          は冬に大人気です。</p>
+        </div>
+      </div>
+    </div>
+    </div>
+   <% end %>
   </div>
  </div>
  </div>

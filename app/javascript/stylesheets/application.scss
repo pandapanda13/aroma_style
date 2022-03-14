@@ -21,13 +21,12 @@
   filter: opacity(60%);
 }
 
-.card-body {
+.topic-card {
   background-color: oldlace;
 }
 
 .topic-image{
   filter: opacity(60%);
-
 }
 
 
@@ -75,14 +74,14 @@
   background-size: cover;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding-top: 150px;
   filter: opacity(80%);
 }
 
 .top-bg {
   width: 1000px;
-  height: 500px;
-  background-image: url('../../assets/images/top2.jpg');
+  height: 300px;
+  background-image: url('../../assets/images/top3.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
