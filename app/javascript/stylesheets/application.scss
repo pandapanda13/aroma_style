@@ -17,6 +17,20 @@
   filter: opacity(60%);
 }
 
+.card-img {
+  filter: opacity(60%);
+}
+
+.card-body {
+  background-color: oldlace;
+}
+
+.topic-image{
+  filter: opacity(60%);
+
+}
+
+
 .bc {
   background-color: oldlace;
   background-size: cover;
@@ -64,6 +78,19 @@
   align-items: center;
   filter: opacity(80%);
 }
+
+.top-bg {
+  width: 1000px;
+  height: 500px;
+  background-image: url('../../assets/images/top2.jpg');
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+  filter: opacity(70%);
+}
+
+
 .bg-text {
   color: black;
 }
@@ -95,7 +122,14 @@
   text-decoration: none;
   color: slategray;
 }
+.link-line {
+  text-decoration: underline;
+  color: #444444;
+}
 
+#error_explanation {
+  color: tomato;
+}
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/

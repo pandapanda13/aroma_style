@@ -19,7 +19,7 @@
     <p class="offset-2 h5 mt-3 mb-4 text-secondary">ブレンド商品　(お好きな香りを組み合わせて作るオリジナルのアロマオイル）</p>
     <div class="items col-10 offset-2">
     <% @items_blend.each do |item_blend| %>
-      <%= link_to item_path(item_blend), class: "link" do %>
+      <%= link_to item_path(item_blend), class: "link-line" do %>
       <div class="image mx-3 my-2">
         <%= image_tag item_blend.image_id, size: "220x180" %>
       </div>
@@ -31,7 +31,7 @@
     <p class="offset-2 h5 mt-3 mb-4 text-secondary"> 通常商品</p>
     <div class="items col-10 offset-2 ">
     <% @items.each do |item| %>
-      <%= link_to item_path(item), class: "link" do %>
+      <%= link_to item_path(item), class: "link-line" do %>
       <div class="image mx-3 my-2">
         <%= image_tag item.image_id, size: "220x180" %>
       </div>

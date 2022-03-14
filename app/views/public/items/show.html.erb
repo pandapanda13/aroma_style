@@ -5,7 +5,7 @@
       <%= image_tag @item.image_id, size: "300x240" %><br>
       <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
       <p>レビュー
-      <%= link_to item_comments_path(@item) do %> (<%= @item.comments.count %>)
+      <%= link_to item_comments_path(@item), class: "link-line" do %>（ <%= @item.comments.count %> ）
       <% end %></p>
        
     </div>

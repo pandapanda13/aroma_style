@@ -26,7 +26,7 @@
         <% @items.each do |item| %>
          <tr>
            <td class="py-2 px-4"><%= item.id %></td>
-           <td class="py-2 px-4"><%= link_to item.name, admin_item_path(item.id) %></td>
+           <td class="py-2 px-4"><%= link_to item.name, admin_item_path(item.id), class: "link-line" %></td>
            <td class="py-2 px-4"><%= item.volume %></td>
            <td class="py-2 px-4"><%= item.price.to_s (:delimited) %>円</td>
            <td class="py-2 px-4">

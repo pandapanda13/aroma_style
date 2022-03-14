@@ -6,7 +6,7 @@
   <div class="row">
     <table class="offset-2 col-5 center-block">
       <thead>
-        <tr><th class="py-2 text-secondary">購入者</th><td class="py-2"><%= link_to admin_customer_path(@order.customer) do %>
+        <tr><th class="py-2 text-secondary">購入者</th><td class="py-2"><%= link_to admin_customer_path(@order.customer), class: "link-line" do %>
                        <%= @order.customer.name %> 様
                        <% end %></td></tr>
         <tr><th class="py-2 text-secondary">注文日</th><td class="py-2"><%= @order.created_at.strftime('%Y/%m/%d') %></td></tr>

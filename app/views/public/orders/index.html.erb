@@ -17,7 +17,7 @@
       <% @orders.each do |order| %>
       <tbody>
         <tr>
-          <td class="py-2 px-1 text-center"><%= link_to order_path(order) do %><%= order.created_at.strftime('%Y/%m/%d') %><% end %></td>
+          <td class="py-2 px-1 text-center"><%= link_to order_path(order), class: "link-line" do %><%= order.created_at.strftime('%Y/%m/%d') %><% end %></td>
           <td class="py-2 px-1">〒<%= order.postal_code %> <%= order.address %><br><%= order.name %> 様</td>
           <td class="py-2 px-1"><% order.order_details.each do |order| %>
                                 <%= order.item.name %><br>

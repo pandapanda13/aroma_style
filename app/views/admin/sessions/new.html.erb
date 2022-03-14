@@ -5,6 +5,7 @@
   </div>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
   <div class="row">
     <div class="col-3 offset-2 mt-4 text-secondary"><%= f.label :メールアドレス %></div>
     <div class="col-6 mt-4"><%= f.email_field :email, size: "45",autofocus: true, autocomplete: "email" %></div>

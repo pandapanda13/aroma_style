@@ -1,43 +1,54 @@
 <div class="bc">
 <div class="container">
- <div class="row mt-1 h-25">
-   <P class="h4 col-10 offset-1 text-secondary">新着商品</P>
-   <% @items.each do |item| %>
-   <div class="col-3 offset-1">
-     <%= link_to item_path(item) do %>
-      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "210x140" %></div>
-       <p><%= item.name %><%= item.volume %>　　<%= item.price %>円</p>
+  <div class="row">
+    <div class="col-2 border-right">
+     <P class="h6 text-secondary font-weight-bold mt-3">ランキング</P>
+     <% @item_comment_ranks.each.with_index(1) do |item, i| %>
+      <%= link_to item_path(item), class: "link" do %>
+        <p class="h6 text-secondary">No.<%= i %></ps>
+        <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
+        <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
+        <p><%= item.name %><%= item.volume %>　<%= item.price %>円</p>
       <% end %>
+     <% end %>
+    <script>
+     $('.average-review-rating').raty({
+      size: 20,
+      readOnly: true,
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      score: function() {
+        return $(this).attr('data-score')
+      }
+     });
+　  </script>
+
+　   <P class="h6 text-secondary font-weight-bold mt-3">新着商品</P>
+    <% @items.each do |item| %>
+     <%= link_to item_path(item), class: "link" do %>
+      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
+       <p><%= item.name %><%= item.volume %>　　<%= item.price %>円</p>
+     <% end %>
+    <% end %>
+　 </div>
+
+　<div class="top-bg h1 col-9 mt-2">Welcome To Aroma Style</div>
+　<div class="card topic-card" style="width:700px;">
+  <div class="row no-gutters">
+    <div class="col-lg-6">
+      <img class="card-img" src="assets/spring.jpg" alt="Card image">
+    </div>
+    <div class="col-lg-6">
+      <div class="card-body text-secondary">
+        <h4 class="card-title font-weight-bold">春のおすすめ</h4>
+        <p class="card-text">暖かくなってきました。新生活のスタートを迎える方も多いのではないでしょうか。<br>緊張を時ほどすにはグレープフルーツのフレッシュな香りを。また、花粉症や季節の変わり目の風邪の対策にはユーカリやティーツリーがおすすめです</p>
+      </div>
+    </div>
    </div>
-   <% end %>
   </div>
-
- <div class="row mt-1">
- <P class="h4 col-11 offset-1 text-secondary mt-3">ランキング</P>
-
- <% @item_comment_ranks.each.with_index(1) do |item, i| %>
-  <div class="col-3 offset-1">
-  <%= link_to item_path(item) do %>
-      <p class="h5 text-secondary">No.<%= i %></ps>
-      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "210x140" %></div>
-      <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
-      <p><%= item.name %><%= item.volume %>　<%= item.price %>円</p>
-  <% end %>
+　  
   </div>
- <% end %>
  </div>
- <script>
-  $('.average-review-rating').raty({
-    readOnly: true,
-    starOn: "<%= asset_path('star-on.png') %>",
-    starOff: "<%= asset_path('star-off.png') %>",
-    starHalf: "<%= asset_path('star-half.png') %>",
-    score: function() {
-      return $(this).attr('data-score')
-    }
-  });
-　</script>
+ </div>
 
-
-</div>
-</div>
