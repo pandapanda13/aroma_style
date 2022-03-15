@@ -8,7 +8,7 @@
         <p class="h6 text-secondary">No.<%= i %></ps>
         <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
         <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
-        <p><%= item.name %><%= item.volume %>　<%= item.price %>円</p>
+        <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
      <% end %>
     <script>
@@ -28,7 +28,7 @@
     <% @items.each do |item| %>
      <%= link_to item_path(item), class: "link" do %>
       <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
-       <p><%= item.name %><%= item.volume %>　　<%= item.price %>円</p>
+       <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
      <% end %>
     <% end %>
 　 </div>
@@ -53,8 +53,8 @@
       </div>
      </div>
     </div>
-  
-    <% #else @today == 6 || 7 || 8 %>
+
+    <% elsif @today == 6 || 7 || 8 %>
   　<div class="card topic-card summer offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
@@ -71,7 +71,7 @@
       </div>
     </div>
     </div>
-    <%# else @today == 9 || 10 || 11 %>
+    <% elsif @today == 9 || 10 || 11 %>
     <div class="card topic-card autumn offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
@@ -87,7 +87,7 @@
       </div>
     </div>
     </div>
-    <%# elsif %>
+    <% else %>
     <div class="card topic-card winter offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">

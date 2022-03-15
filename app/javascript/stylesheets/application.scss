@@ -70,11 +70,11 @@
 .bg {
   width: 1500px;
   height: 700px;
-  background-image: url('../../assets/images/haikei.jpg');
+  background-image: url('../../assets/images/top1.jpg');
   background-size: cover;
   display: flex;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 180px;
   filter: opacity(80%);
 }
 
@@ -89,9 +89,13 @@
   filter: opacity(70%);
 }
 
+.logo {
+  opacity: 0.8;
+}
+
 
 .bg-text {
-  color: black;
+  color: lightslategray;
 }
 
 .pagination {
