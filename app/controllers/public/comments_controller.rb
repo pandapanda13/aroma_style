@@ -1,4 +1,5 @@
 class Public::CommentsController < ApplicationController
+  before_action :authenticate_customer!, except: [:index]
   def index
     @item = Item.find(params[:item_id])
     @comments = @item.comments
@@ -19,7 +20,7 @@ class Public::CommentsController < ApplicationController
     if @comment.save
      redirect_to item_comments_path(@comment.item)
     else
-      
+
       @item = Item.find(params[:item_id])
       flash[:danger] = 'コメントの投稿に失敗しました'
       render :new

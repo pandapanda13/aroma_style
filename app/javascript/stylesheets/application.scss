@@ -7,10 +7,18 @@
   box-sizing: border-box;
 }
 .navbar {
-  display: inline-block;
+  justify-content: center;
   border-top: 2px solid grey;
   text-align: center;
   color: grey;
+}
+
+.shipping-fee {
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  font-weight: bolder;
+  padding: 5px;
+  margin-bottom: 10px;
 }
 
 .image {

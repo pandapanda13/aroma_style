@@ -7,13 +7,13 @@
   </div>
   <div class="row">
    <div class="col-4 offset-7">
-   <%= link_to "注文履歴へ", orders_path(current_customer), class: 'btn btn-outline-success mx-4'%>
+   <%= link_to "注文履歴へ", orders_path, class: 'btn btn-outline-success mx-4'%>
    </div>
   </div>
   <div class="row">
    <div class="col-5 offset-6 mt-3">
 
-     <%= link_to "編集する", customers_edit_path(current_customer), class: 'btn btn-outline-success mx-3'%>
+     <%= link_to "編集する", customers_edit_path, class: 'btn btn-outline-success mx-3'%>
      <%= link_to "退会する", customers_unsubscribe_path, class: 'btn btn-outline-danger' %>
    </div>
   </div>
@@ -42,6 +42,7 @@
     <script>
           $('#rate-<%= comment.id %>').raty({
             size: 36,
+            readOnly: true,
             starOff:  '<%= asset_path('star-off.png') %>',
             starOn : '<%= asset_path('star-on.png') %>',
             starHalf: '<%= asset_path('star-half.png') %>',
@@ -50,7 +51,7 @@
         });
     </script>
     <p class="border-top mt-2  text-secondary">レビュー：<%= comment.comment_content %></p>
-    <div class="button text-right">
+    <div class="button text-right mb-2">
     <%= link_to "編集", edit_comment_path(comment), class: 'btn btn-outline-success' %>
     <%= link_to "削除", comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
     </div>
