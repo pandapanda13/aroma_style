@@ -37,7 +37,7 @@
       <% @total = 0 %>
       <% @order_details.each do |order_detail| %>
        <tr>
-         <td class="py-2 px-2"><%= order_detail.item.name %></td>
+         <td class="py-2 px-2"><%= order_detail.item.name %><br><%= order_detail.selected %></td>
          <td class="py-2 px-2"><%= order_detail.item.volume %></td>
          <td class="py-2 px-2"><%= order_detail.item.add_tax_price.to_s (:delimited) %></td>
          <td class="py-2 px-2"><%= order_detail.amount %></td>

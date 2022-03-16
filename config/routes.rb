@@ -33,21 +33,20 @@ Rails.application.routes.draw do
   scope module: 'public' do
     get 'orders/thanks'
     post 'orders/confirm'
-    resources :orders, only:[:new, :create, :index]
-    get 'orders/show', to: 'orders#show'
+    resources :orders, only:[:new, :create, :index, :show]
   end
   scope module: 'public' do
     delete 'cart_items/empty'
     resources :cart_items, only:[:index, :create, :update, :destroy]
   end
-  
+
   scope module: 'public' do
     get 'items/search'
     resources :items, only:[:index, :show] do
-     resources :comments, shallow: true
+     resources :comments, except:[:show],shallow: true
     end
   end
-  
+
   scope module: 'public' do
     root to: 'homes#top'
     get 'about', to: 'homes#about'

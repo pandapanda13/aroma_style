@@ -34,15 +34,16 @@ class Public::OrdersController < ApplicationController
 
   def index
     @orders = current_customer.orders.all.order(created_at: :desc).page(params[:page])
-
-
   end
 
   def show
-    @order = Order.find(current_customer.id)
-    @order_detail = OrderDetail.find(current_customer.id)
+    @order = Order.find(params[:id])
     @order_details = @order.order_details
-    @item = @order_detail.item
+    if @order.customer == current_customer
+     render :show
+    else
+     redirect_to orders_path(current_customer)
+    end
   end
 
   def confirm

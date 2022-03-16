@@ -6,7 +6,9 @@
 
  <%= form_with model: @comment, url:comment_path(@comment), local:true do |f| %>
  <div class="row">
-    <label for="rate": class="col-2 offset-2 mt-2 text-secondary">星評価</label>
+    <label for="comment_content": class="col-2 offset-2 mt-3 text-secondary">商品名</label>
+    <div class="col-8 mt-2 text-secondary font-weight-bold" ><%= @comment.item.name %></div><br>
+    <label for="rate": class="col-2 offset-2 mt-2 mr-3 text-secondary">星評価</label>
     <div id="rate-<%= @comment.id %>"></div>
     <script>
           $('#rate-<%= @comment.id %>').raty({

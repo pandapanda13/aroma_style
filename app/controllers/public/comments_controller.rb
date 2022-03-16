@@ -7,6 +7,11 @@ class Public::CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
+     if @comment.customer == current_customer
+       render "edit"
+     else
+       redirect_to customers_mypage_path(current_customer)
+     end
   end
 
   def new
@@ -29,14 +34,23 @@ class Public::CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
-    comment.update(comment_params)
-    redirect_to customers_mypage_path(current_customer)
+    if comment.customer == current_customer
+      comment.update(comment_params)
+       redirect_to customers_mypage_path(current_customer)
+     else
+       redirect_to customers_mypage_path(current_customer)
+     end
+
   end
 
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
-    redirect_to customers_mypage_path(current_customer)
+    if @comment.customer == current_customer
+      @comment.destroy
+      redirect_to customers_mypage_path(current_customer)
+    else
+      redirect_to customers_mypage_path(current_customer)
+    end
   end
 
   private
