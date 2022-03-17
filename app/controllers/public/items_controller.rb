@@ -5,8 +5,7 @@ class Public::ItemsController < ApplicationController
 
   def index
     @items_blend = Item.where(blend_flag: "true")
-    @items = Item.where(blend_flag: "false").page(params[:page]).per(6) 
-    Item
+    @items = Item.where(blend_flag: "false").page(params[:page]).per(6)
   end
 
   def search

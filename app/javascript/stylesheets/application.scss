@@ -37,7 +37,6 @@
   filter: opacity(60%);
 }
 
-
 .bc {
   background-color: oldlace;
   background-size: cover;
@@ -61,6 +60,10 @@
   min-height: 100vh;
 }
 
+.item-index-card {
+  display: flex;
+  margin-left: 150px;
+}
 
 .item-name {
   border-bottom: 2px solid grey;
@@ -70,10 +73,7 @@
 .item-show{
   color: gray;
 }
-.items{
-  display: flex;
-  flex-wrap: wrap;
-}
+
 
 .bg {
   width: 1500px;
