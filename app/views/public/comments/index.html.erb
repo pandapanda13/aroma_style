@@ -3,7 +3,9 @@
   <div class="row">
     <p class="title h4 text-secondary offset-2"><%= @item.name %> のレビュー 一覧</p>
   </div>
-
+  <% if @comments.empty? %>
+    <p class="text-secondary offset-2 mt-3">まだ <%= @item.name %> のレビューはありません</p>
+  <% end %>
   <div class="row">
     <% @comments.each do |comment| %>
     <div class="card col-8 offset-2 mt-2 text-secondary">

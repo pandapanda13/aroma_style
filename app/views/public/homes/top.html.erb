@@ -8,7 +8,7 @@
         <p class="h6 text-secondary">No.<%= i %></ps>
         <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
         <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
-        <p><%= item.name %><%= item.volume %><%= item.price %>円</p>
+        <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
      <% end %>
     <script>

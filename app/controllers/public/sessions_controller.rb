@@ -2,7 +2,7 @@
 
 class Public::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
-  before_action :customer_state, only:[:create]
+  before_action :is_active_customer, only:[:create]
 
   # GET /resource/sign_in
   # def new
@@ -26,11 +26,17 @@ class Public::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
   protected
-  def customer_state
-   @customer = Customer.find_by(email: params[:customer][:email])
-   return if !@customer
-   if @customer.valid_password?(params[:customer][:password])
-   end
+
+
+  def is_active_customer
+    @customer = Customer.find_by(email: params[:customer][:email].downcase)
+    if @customer
+      if (@customer.valid_password?(params[:customer][:password]) && (@customer.is_active == false))
+        flash[:error] = "退会済みです"
+        redirect_to new_customer_session_path
+      end
+    else
+      flash[:error] = "会員が登録されていません"
+    end
   end
-  
 end

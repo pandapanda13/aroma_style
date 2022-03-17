@@ -4,7 +4,7 @@
     <div class="col-11">
     <p class="h4 text-secondary px-4">ログイン</p>
   </div>
-
+  <h4 class="text-danger offset-1"><%= flash[:error] %></h4>
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="row">
     <div class="col-3 offset-1 mt-4 text-secondary"><%= f.label :メールアドレス %></div>
@@ -20,7 +20,6 @@
     <%= f.submit "ログイン", class: "btn btn-outline-success  mt-4" %>
     </div>
   </div>
-
 
 　 <div class="row">
     <div class="col-11 offset-1">
