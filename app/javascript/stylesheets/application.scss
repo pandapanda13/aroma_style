@@ -13,6 +13,20 @@
   color: grey;
 }
 
+.f-navbar {
+  justify-content: center;
+  text-align: center;
+  color: oldlace;
+}
+
+.footer-text {
+  justify-content: center;
+  font-weight: bold;
+  color: oldlace;
+  text-align: center;
+
+}
+
 .shipping-fee {
   border-top: 2px solid grey;
   border-bottom: 2px solid grey;
@@ -140,6 +154,11 @@
 
 #error_explanation {
   color: tomato;
+}
+
+.policy-title {
+  font-style: italic;
+  font-weight: bold;
 }
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.

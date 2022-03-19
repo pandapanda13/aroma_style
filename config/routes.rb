@@ -50,6 +50,7 @@ Rails.application.routes.draw do
   scope module: 'public' do
     root to: 'homes#top'
     get 'about', to: 'homes#about'
+    get 'policy', to: 'homes#policy'
   end
 
   scope module: 'public' do
