@@ -23,10 +23,11 @@
 季節や生活の変化に合わせて新しい香りを必要とした時。オリジナルの特別感を楽しみたいとき。
 
 ## 設計書
-<...>
+<https://docs.google.com/spreadsheets/d/1lrLvafAtohK4UPya2mEnssovJuG0inDfrGuQOWdAiHY/edit?usp=sharing>
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/1vxIFNWrL-PSEGXD1A8scy12r9ft5x66L8vps1hQ5x_k/edit?usp=sharing
+テーブル定義書　https://docs.google.com/spreadsheets/d/1vxIFNWrL-PSEGXD1A8scy12r9ft5x66L8vps1hQ5x_k/edit?usp=sharing
+ER図　https://drive.google.com/file/d/1r-_MCqyeHGzqBa4e-GCUMTVWB-20sdxa/view?usp=sharing
 
 ## 開発環境
 - OS：Linux(CentOS)
@@ -39,4 +40,3 @@ https://docs.google.com/spreadsheets/d/1vxIFNWrL-PSEGXD1A8scy12r9ft5x66L8vps1hQ5
 - pixabay  https://pixabay.com/
 - LOGASTER
 
-config.assets.compile = true
