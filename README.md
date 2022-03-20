@@ -1,4 +1,4 @@
-![Aroma Style](../logo_image.png)
+![Aroma Style](./logo_image.png)
 
 ## サイト概要
 アロマオイルのショッピングサイト。２種・３種の香りを顧客自ら選択しオリジナルのブレンドオイルをオーダーできる。<br>
