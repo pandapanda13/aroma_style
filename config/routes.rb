@@ -54,7 +54,6 @@ Rails.application.routes.draw do
   end
 
   scope module: 'public' do
-    get 'contacts/done'
     resources :contacts, only: [:new, :create]
   end
 

@@ -6,13 +6,14 @@ ja:
         transfer: '銀行振込'
       shipping_status:
         waiting: '入金待ち'
-        paid: '入金確認'
+        paid: '入金確認・発送準備中'
         shipped: '発送済み'
     order_detail:
       status:
         unstarted: '準備前'
         preparing: '発送準備中'
         completed: '発送準備完了'
+        shipped: '発送済み'
   activerecord:
     attributes:
       contact:

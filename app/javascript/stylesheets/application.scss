@@ -6,11 +6,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.leaf-image {
+  background-image: url('../../assets/images/leaf.jpg');
+  background-size: cover;
+  justify-content: center;
+  width: 100%;
+  height: 200px;
+  filter: opacity(60%);
+}
 .navbar {
   justify-content: center;
-  border-top: 2px solid grey;
   text-align: center;
-  color: grey;
+  color: gray;
+}
+.navbar-nav {
+  color: black;
 }
 
 .f-navbar {
@@ -28,11 +39,12 @@
 }
 
 .shipping-fee {
-  border-top: 2px solid grey;
-  border-bottom: 2px solid grey;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
   font-weight: bolder;
   padding: 5px;
   margin-bottom: 10px;
+  color: slategray;
 }
 
 .image {
@@ -90,7 +102,7 @@
 
 
 .bg {
-  width: 1500px;
+  width: auto;
   height: 700px;
   background-image: url('../../assets/images/top1.jpg');
   background-size: cover;
@@ -99,6 +111,7 @@
   padding-top: 180px;
   filter: opacity(80%);
 }
+
 
 .top-bg {
   width: 1000px;
@@ -110,11 +123,6 @@
   padding-top: 100px;
   filter: opacity(70%);
 }
-
-.logo {
-  opacity: 0.8;
-}
-
 
 .bg-text {
   color: lightslategray;
@@ -160,6 +168,8 @@
   font-style: italic;
   font-weight: bold;
 }
+
+
 // Place all the styles related to the public/homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
