@@ -38,6 +38,6 @@ ER図　https://drive.google.com/file/d/1r-_MCqyeHGzqBa4e-GCUMTVWB-20sdxa/view?u
 - IDE：Cloud9
 
 ## 使用素材
-- pixabay  https://pixabay.com/
+- pixabay
 - LOGASTER
 
