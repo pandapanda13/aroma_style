@@ -7,14 +7,7 @@
   box-sizing: border-box;
 }
 
-.leaf-image {
-  background-image: url('../../assets/images/leaf.jpg');
-  background-size: cover;
-  justify-content: center;
-  width: 100%;
-  height: 200px;
-  filter: opacity(60%);
-}
+
 .navbar {
   justify-content: center;
   text-align: center;
@@ -104,28 +97,10 @@ footer{
 }
 
 
-.bg {
-  width: auto;
-  height: 700px;
-  background-image: url('../../assets/images/top1.jpg');
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  padding-top: 180px;
-  filter: opacity(80%);
-}
 
 
-.top-bg {
-  width: 1000px;
-  height: 300px;
-  background-image: url('../../assets/images/top3.jpg');
-  background-size: cover;
-  display: flex;
-  justify-content: center;
-  padding-top: 100px;
-  filter: opacity(70%);
-}
+
+
 
 .bg-text {
   color: lightslategray;
