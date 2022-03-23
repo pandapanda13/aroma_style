@@ -53,14 +53,14 @@
             score: <%= comment.rate %>,
         });
     </script>
-    <p class="border-top mt-2  text-secondary">レビュー：<%= comment.comment_content %></p>
+    <p class="border-top mt-2 mb-4 text-secondary">レビュー：<%= comment.comment_content %></p>
     <div class="button text-right mb-2">
     <%= link_to "編集", edit_comment_path(comment), class: 'btn btn-outline-success' %>
     <%= link_to "削除", comment_path(comment), method: :delete, class: 'btn btn-outline-danger' %>
     </div>
    </div>
    <% end %>
-   <div class="pagination col-8 offset-2">
+   <div class="pagination col-8 offset-2 mb-3 mt-3">
     <%= paginate @comments %>
   </div>
    </div>
