@@ -145,7 +145,16 @@ footer{
   font-weight: bold;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+ .item-index-card {
+   display: block;
+ }
+ .item-result{
+   display: block;
+ }
+}
+
+@media (max-width: 425px) {
  .item-index-card {
    display: block;
  }
