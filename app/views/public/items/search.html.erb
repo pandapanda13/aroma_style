@@ -1,23 +1,23 @@
  <div class="bc">
  <div class="container">
   <p class="title offset-2 h4 text-secondary">検索結果一覧</p>
-
-    <div class="row offset-1 mt-5">
-      <% if @results.length !=0 %>
-          <% @results.each do |result| %>
-            <div class="item-result col-2 offset-1">
-              <%= link_to item_path(result.id), class: "item-link" do%>
-               <div class="image mb-2 mr-5">
-               <%= image_tag result.image_id, size: "220x180", class: "img-fluid" %>
-               </div>
-               <p><%= result.name %><%= result.volume %></p>
-               <p><%= result.price %>円</p>
-              <% end %>
-            </div>
-          <% end %>
+  <div class="row offset-2 mt-5">
+   <div class="item-result-card card-deck" style="width:900px;">
+     <% if @results.length !=0 %>
+       <% @results.each do |result| %>
+       <div class="ml-5">
+         <%= link_to item_path(result.id), class: "item-link" do %>
+         <div class="image"><%= image_tag result.image_id, size: "220x180", class: "img-fluid" %></div>
+         <p><%= result.name %><%= result.volume %></p>
+         <p><%= result.price %>円</p>
+         <% end %>
+       </div>
+       <% end %>
       <% else %>
         <h5 class="alert offset-2 text-secondary">該当する商品はありません</h5>
       <% end %>
-    </div>
+   </div>
+  </div>
 </div>
 </div>
+
