@@ -2,7 +2,7 @@
 <div class="container">
  <div class="row mt-5">
   <div class="image col-4">
-    <%= image_tag @item.image_id, size: "300x240"%>
+    <%= image_tag @item.image_id, size: "300x240", class: "img-responsive" %>
     <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
       <p>レビュー
       <%= link_to admin_item_comments_path(@item), class: "link-line" do %>（ <%= @item.comments.count %> ）

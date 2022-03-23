@@ -8,7 +8,7 @@
             <div class="item-result col-2 offset-1">
               <%= link_to item_path(result.id), class: "item-link" do%>
                <div class="image mb-2 mr-5">
-               <%= image_tag result.image_id, size: "220x180" %>
+               <%= image_tag result.image_id, size: "220x180", class: "img-responsive" %>
                </div>
                <p><%= result.name %><%= result.volume %></p>
                <p><%= result.price %>円</p>

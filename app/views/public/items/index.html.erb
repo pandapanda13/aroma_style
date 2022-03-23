@@ -21,7 +21,7 @@
        <% @items_blend.each do |item_blend| %>
        <div class="ml-5">
          <%= link_to item_path(item_blend), class: "link-line" do %>
-         <div class="image"><%= image_tag item_blend.image_id, size: "240x190" %></div>
+         <div class="image"><%= image_tag item_blend.image_id, size: "240x190", class: "img-responsive" %></div>
          <h6><%= item_blend.name %><%= item_blend.volume %>  <%= item_blend.price %>円</h6>
          <% end %>
          <div class="average-review-rating mt-1" data-score=<%= item_blend.avg_score %>></div>
@@ -38,7 +38,7 @@
       <% @items.each do |item| %>
       <div class="ml-5">
         <%= link_to item_path(item), class: "link-line" do %>
-        <div class="image"><%= image_tag item.image_id, size: "240x190" %></div>
+        <div class="image"><%= image_tag item.image_id, size: "240x190", class: "img-responsive" %></div>
         <h6><%= item.name %> <%= item.volume %>  <%= item.price %>円</h6>
         <% end %>
         <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>

@@ -9,7 +9,7 @@
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>
       <%= link_to item_path(item), class: "link" do %>
         <p class="h6 text-secondary">No.<%= i %></ps>
-        <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
+        <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80", class: "img-responsive" %></div>
         <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
         <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
@@ -30,7 +30,7 @@
 　   <P class="h6 text-secondary font-weight-bold mt-3">新着商品</P>
     <% @items.each do |item| %>
      <%= link_to item_path(item), class: "link" do %>
-      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80" %></div>
+      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80", class: "img-responsive" %></div>
        <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
      <% end %>
     <% end %>
@@ -42,7 +42,7 @@
   　<div class="card topic-card spring offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
-        <%= image_tag 'spring.jpg', class: 'card-img' %>
+        <%= image_tag 'spring.jpg', class: 'img-responsive card-img' %>
       </div>
       <div class="col-lg-6">
         <div class="card-body text-secondary">
@@ -61,7 +61,7 @@
   　<div class="card topic-card summer offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
-        <%= image_tag 'summer.jpg', class: 'card-img' %>
+        <%= image_tag 'summer.jpg', class: 'img-responsive card-img' %>
       </div>
       <div class="col-lg-6">
         <div class="card-body text-secondary">
@@ -78,7 +78,7 @@
     <div class="card topic-card autumn offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
-        <%= image_tag 'autumn.jpg', class: 'card-img' %>
+        <%= image_tag 'autumn.jpg', class: 'img-responsive card-img' %>
       </div>
       <div class="col-lg-6">
         <div class="card-body text-secondary">
@@ -94,7 +94,7 @@
     <div class="card topic-card winter offset-1 mt-5" style="width:700px;">
     <div class="row no-gutters">
       <div class="col-lg-6">
-        <%= image_tag 'winter.jpg', class: 'card-img' %>
+        <%= image_tag 'winter.jpg', class: 'card-img img-responsive' %>
       </div>
       <div class="col-lg-6">
         <div class="card-body text-secondary">
