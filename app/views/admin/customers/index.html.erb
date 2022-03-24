@@ -3,6 +3,7 @@
   <div class="row">
    <p class="h4 col-3 offset-2 mt-3 text-secondary">顧客一覧</p>
   </div>
+  <div class="table-responsive">
   <table class="table-bordered offset-2  mt-3 center-block">
    <thead>
       <tr class="text-center text-secondary">
@@ -30,6 +31,7 @@
     <% end %>
    </tbody>
   </table>
+  </div>
   <div class="pagination col-8 offset-2">
     <%= paginate @customers %>
   </div>

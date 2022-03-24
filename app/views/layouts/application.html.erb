@@ -12,7 +12,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <script src="https://kit.fontawesome.com/fb8d9b2be6.js" crossorigin="anonymous"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   </head>
 　<div class="hbc">
   <body>
@@ -21,7 +21,7 @@
      <div class="container">
        <div class="row justify-content-center">
          <div class="leaf-image">
-         <div class="logo col-12 m-4 text-center">
+         <div class="logo m-4 text-center">
             <a class="navbar-brand" href="/"><%= image_tag 'logo_image.png' %></a>
          </div>
          </div>
@@ -29,10 +29,10 @@
          <nav class="navbar col-12 navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
             <li class=""><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
-            <li class="ml-4"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
-            <li class="ml-4"><%= link_to cart_items_path, class: "link" do %><p class="h5 font-weight-bold">Cart</p><p class="font-weight-normal">お買い物かご</p><% end %></li>
-            <li class="ml-4"><%= link_to customers_mypage_path, class: "link" do %><p class="h5 font-weight-bold">My Page</p><p class="font-weight-normal">マイページ</p><% end %></li>
-            <li class="ml-4"><%= link_to destroy_customer_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
+            <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="mx-2"><%= link_to cart_items_path, class: "link" do %><p class="h5 font-weight-bold">Cart</p><p class="font-weight-normal">お買い物かご</p><% end %></li>
+            <li class="mx-2"><%= link_to customers_mypage_path, class: "link" do %><p class="h5 font-weight-bold">My Page</p><p class="font-weight-normal">マイページ</p><% end %></li>
+            <li class="mx-2"><%= link_to destroy_customer_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
          <div class="shipping-fee col-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
@@ -42,17 +42,17 @@
      <div class="container">
        <div class="row justify-content-center">
          <div class="leaf-image">
-         <div class="logo col-10 offset-1 m-4 text-center">
+         <div class="logo m-4 text-center">
             <a class="navbar-brand" href="/"><%= image_tag 'logo_image.png' %></a>
          </div>
          </div>
        <div class="row justify-content-center mb-4">
          <nav class="navbar col-10 navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
-            <li class=""><%= link_to admin_homes_top_path, class: "link" do %><p class="h5 font-weight-bold">Orders</p><p class="font-weight-normal">注文履歴一覧</p><% end %></li>
-            <li class="ml-4"><%= link_to admin_customers_path, class: "link" do %><p class="h5 font-weight-bold">Customers</p><p class="font-weight-normal">顧客一覧</p><% end %></li>
-            <li class="ml-4"><%= link_to admin_items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
-            <li class="ml-4"><%= link_to destroy_admin_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
+            <li class="mx-2"><%= link_to admin_homes_top_path, class: "link" do %><p class="h5 font-weight-bold">Orders</p><p class="font-weight-normal">注文履歴一覧</p><% end %></li>
+            <li class="mx-2"><%= link_to admin_customers_path, class: "link" do %><p class="h5 font-weight-bold">Customers</p><p class="font-weight-normal">顧客一覧</p><% end %></li>
+            <li class="mx-2"><%= link_to admin_items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="mx-2"><%= link_to destroy_admin_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
          <div class="shipping-fee col-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
@@ -67,13 +67,13 @@
          </div>
          </div>
        </div>
-       <div class="row justify-content-center mb-4">
+       <div class="row mb-4">
          <nav class="navbar col-10 offset-1 navbar-expand-lg">
           <ul class="navbar-nav mt-2">
-            <li><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
-            <li class="ml-4"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
-            <li class="ml-4"><%= link_to new_customer_registration_path, class: "link" do %><p class="h5 font-weight-bold">Create Account</p><p class="font-weight-normal">新規会員登録</p><% end %></li>
-            <li class="ml-4"><%= link_to customer_session_path, class: "link" do %><p class="h5 font-weight-bold">Log In</p><p class="font-weight-normal">ログイン</p><% end %></li>
+            <li class="mx-2"><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
+            <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
+            <li class="mx-2"><%= link_to new_customer_registration_path, class: "link" do %><p class="h5 font-weight-bold">Create Account</p><p class="font-weight-normal">新規会員登録</p><% end %></li>
+            <li class="mx-2"><%= link_to customer_session_path, class: "link" do %><p class="h5 font-weight-bold">Log In</p><p class="font-weight-normal">ログイン</p><% end %></li>
           </ul>
          </nav>
          <div class="shipping-fee col-10 offset-1 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
@@ -88,8 +88,8 @@
         <div class="row  justify-content-center">
           <div class="f-navbar navbar-expand-lg">
             <ul class="navbar-nav mt-2">
-                <li><%= link_to policy_path, class: "link" do %><p class="footer-text font-weight-normal">Policy／ポリシー</p><% end %></li>
-                <li class="ml-5"><%= link_to new_contact_path, class: "link" do %><p class="footer-text font-weight-normal">Contact /お問い合せ</p><% end %></li>
+                <li class="mx-3"><%= link_to policy_path, class: "link" do %><p class="footer-text font-weight-normal">Policy／ポリシー</p><% end %></li>
+                <li class="mx-3"><%= link_to new_contact_path, class: "link" do %><p class="footer-text font-weight-normal">Contact /お問い合せ</p><% end %></li>
             </ul>
           </div>
         </div>
