@@ -4,7 +4,7 @@
     <div class="image col-3 offset-1 mt-5">
       <%= image_tag @item.image_id, size: "300x240" %><br>
       <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
-      <p>レビュー
+      <p class="review">レビュー
       <%= link_to item_comments_path(@item), class: "link-line" do %>（ <%= @item.comments.count %> ）
       <% end %></p>
 
@@ -13,8 +13,8 @@
     <div class="item-show col-6 offset-1 mt-5">
       <h4 class="item-name mb-3"><%= @item.name %></h4>
       <p class="h6">容量：<%= @item.volume %></p>
-      <p><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
-      <p>おすすめブレンド：　<%= @item.blend_example %></p>
+      <p class="item-p-resp"><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
+      <p class="item-p-resp">おすすめブレンド：　<%= @item.blend_example %></p>
       <P class="font-weight-bold"><%= @item.add_tax_price.to_s (:delimited) %>
          円(税込)</P>
 
@@ -23,7 +23,7 @@
 
     <div class="select mt-2">
           <% if @item.blend_flag == true %>
-          <div class="field">
+          <div class="field item-p-resp">
            <%= f.label :selected,"選択して下さい"%><br>
            <% @items.each do |item| %>
             <% unless item.name == "2種ブレンド" || item.name == "3種ブレンド"%>
@@ -39,7 +39,7 @@
           </div>
           <% end %>
     </div>
-    <div class="mt-3 text-right">
+    <div class="item-btn-rsp mt-3 text-right">
          <% if customer_signed_in? %>
          <%= f.label :amount, "個数を選択" %>
           <%= f.select :amount, [1,2,3,4,5] %>

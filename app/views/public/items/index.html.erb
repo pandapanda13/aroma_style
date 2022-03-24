@@ -16,10 +16,10 @@
   </div>
 
   <div class="row">
-    <h4 class="offset-2 col-9 mt-3 mb-4 border-bottom text-secondary">ブレンド商品<span class="h5">(お好きな香りを組み合わせて作るオリジナルのアロマオイル)</span><h4>
-    <div class="item-index-card card-deck" style="width:900px;">
+    <h4 class="items-title offset-2 col-9 mt-3 mb-4 border-bottom text-secondary">ブレンド商品<span class="h5">(お好きな香りを組み合わせて作るオリジナルのアロマオイル)</span><h4>
+    <div class="item-index-card card-deck">
        <% @items_blend.each do |item_blend| %>
-       <div class="ml-5">
+       <div class="item-card-resp ml-5">
          <%= link_to item_path(item_blend), class: "link-line" do %>
          <div class="image"><%= image_tag item_blend.image_id, size: "240x190", class: "img-fluid" %></div>
          <h6><%= item_blend.name %><%= item_blend.volume %>  <%= item_blend.price %>円</h6>
@@ -33,10 +33,10 @@
   </div>
 
   <div class="row">
-    <h4 class="offset-2 col-9 mt-3 mb-4 border-bottom text-secondary"> 通常商品</h4>
-    <div class="item-index-card card-deck" style="width:900px;">
+    <h4 class="items-title offset-2 col-9 mt-3 mb-4 border-bottom text-secondary"> 通常商品</h4>
+    <div class="item-index-card card-deck">
       <% @items.each do |item| %>
-      <div class="ml-5">
+      <div class="item-card-resp ml-5">
         <%= link_to item_path(item), class: "link-line" do %>
         <div class="image"><%= image_tag item.image_id, size: "240x190", class: "img-fluid" %></div>
         <h6><%= item.name %> <%= item.volume %>  <%= item.price %>円</h6>

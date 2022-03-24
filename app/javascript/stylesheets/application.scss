@@ -154,18 +154,48 @@ footer{
 @media (max-width: 425px) {
  .item-index-card {
    display: block;
+   margin-left: 10px;
  }
  .item-result{
    display: block;
  }
 
+ .item-index-card {
+   margin: auto;
+ }
+
+ .item-card-resp{
+   padding-left: 25px;
+ }
+
+ .logo {
+   width: 40px;
+   height: 20px;
+   padding-top: 15px;
+ }
+
+ .items-title{
+   font-size: 20px;
+ }
+
  .row {
    display: block;
  }
+
+.average-review-rating{
+  width: max-content;
 }
 
+.review {
+  width: 130px;
+}
+
+.item-p-resp{
+  width: 250px;
+}
 .row-top{
   display: flex;
+}
 }
 
 // Place all the styles related to the public/homes controller here.
