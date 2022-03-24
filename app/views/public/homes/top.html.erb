@@ -3,7 +3,7 @@
   <% if flash[:notice] %>
  <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p></div>
  <% end %>
-  <div class="row">
+  <div class="row-top">
     <div class="col-2 border-right">
      <P class="h6 text-secondary font-weight-bold mt-3">ランキング</P>
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>

@@ -152,6 +152,9 @@ footer{
  .item-result{
    display: block;
  }
+ .row {
+   display: block;
+ }
 }
 
 @media (max-width: 425px) {
@@ -161,6 +164,14 @@ footer{
  .item-result{
    display: block;
  }
+
+ .row {
+   display: block;
+ }
+}
+
+.row-top{
+  display: flex;
 }
 
 // Place all the styles related to the public/homes controller here.
