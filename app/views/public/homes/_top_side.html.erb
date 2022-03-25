@@ -1,0 +1,32 @@
+ <div class="bc">
+    <div class="col-sm-2 offset-sm-1 border-right">
+     <P class="h6 text-secondary font-weight-bold mt-3">ランキング</P>
+     <% @item_comment_ranks.each.with_index(1) do |item, i| %>
+      <%= link_to item_path(item), class: "link" do %>
+        <p class="h6 text-secondary">No.<%= i %></ps>
+        <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "150x100", class: "img-fluid" %></div>
+        <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
+        <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
+      <% end %>
+     <% end %>
+    <script>
+     $('.average-review-rating').raty({
+      size: 20,
+      readOnly: true,
+      starOn: "<%= asset_path('star-on.png') %>",
+      starOff: "<%= asset_path('star-off.png') %>",
+      starHalf: "<%= asset_path('star-half.png') %>",
+      score: function() {
+        return $(this).attr('data-score')
+      }
+     });
+　  </script>
+
+　   <P class="h6 text-secondary font-weight-bold mt-3">新着商品</P>
+    <% @items.each do |item| %>
+     <%= link_to item_path(item), class: "link" do %>
+      <div class="image mb-2 mr-5"><%= image_tag item.image_id, size: "110x80", class: "img-fluid" %></div>
+       <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
+     <% end %>
+    <% end %>
+</div>

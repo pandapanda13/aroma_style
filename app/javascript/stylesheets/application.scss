@@ -33,6 +33,9 @@ footer{
   background-color: darkgrey;
 }
 
+.row-top{
+  display: flex;
+}
 .shipping-fee {
   border-top: 2px solid gray;
   border-bottom: 2px solid gray;
@@ -48,6 +51,8 @@ footer{
 
 .card-img {
   filter: opacity(60%);
+  width: 250px;
+  height: 180px;
 }
 
 .topic-card {
@@ -57,6 +62,15 @@ footer{
 .topic-image{
   filter: opacity(60%);
 }
+
+.top-ranking {
+  display: inline-flex;
+}
+
+.new {
+  display: inline-flex;
+}
+
 
 .bc {
   background-color: oldlace;
@@ -193,9 +207,7 @@ footer{
 .item-p-resp{
   width: 250px;
 }
-.row-top{
-  display: flex;
-}
+
 }
 
 // Place all the styles related to the public/homes controller here.
