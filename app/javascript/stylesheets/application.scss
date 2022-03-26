@@ -192,6 +192,14 @@ footer{
    font-size: 20px;
  }
 
+ .top-ranking{
+   display: block;
+ }
+
+ .top-bg {
+   width: auto;
+ }
+
  .row {
    display: block;
  }
@@ -208,6 +216,19 @@ footer{
   width: 250px;
 }
 
+.sign-in-form {
+  margin-left: 40px;
+  margin-top: auto;
+}
+
+.sign-up-form {
+  margin-left: 40px;
+  margin-top: auto;
+}
+
+#customer_address{
+  width: 300px;
+}
 }
 
 // Place all the styles related to the public/homes controller here.

@@ -1,6 +1,6 @@
 <div class="bc">
 <div class="container">
- <div class="row">
+ <div class="row pb-3">
   <% if flash[:notice] %>
   <p class="notice text-center" style="color:green;"><%= flash[:notice] %></p></div>
   <% end %>
@@ -10,7 +10,7 @@
  <div class="row offset-1 mt-5">
 　 <p class="h5 text-secondary font-weight-bold ml-5 mt-3 mr-0">ランキング</p>
  </div>
- <div class="row offset-2 mt-5">
+ <div class="row offset-2">
      <div class="top-ranking">
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
@@ -27,7 +27,7 @@
 　 <p class="h5 text-secondary font-weight-bold ml-5 mr-3 mt-3">新着商品</p>
  </div>
  <div class="row offset-2">
-     <div class="new">
+     <div class="top-ranking">
      <% @items.each do |item| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
         <div class="image"><%= image_tag item.image_id, size: "170x110" %></div>
@@ -39,7 +39,7 @@
 
 
 　 <% if @today == 3 || 4 || 5 %>
-  　<div class="card topic-card spring col-sm-10 offset-1 mt-5 mb-5" style="width:auto;">
+  　<div class="card topic-card spring col-sm-10 offset-1 mb-5 p-2" style="width:auto;">
     <div class="row no-gutters">
       <div class="col-sm-4 mt-4 ml-2">
         <%= image_tag 'spring.jpg', class: 'img-fluid card-img' %>
@@ -58,7 +58,7 @@
     </div>
 
     <% elsif @today == 6 || 7 || 8 %>
-  　<div class="card topic-card summer offset-1 mt-5" style="width:auto;">
+  　<div class="card topic-card summer offset-1  mb-5 p-2" style="width:auto;">
     <div class="row no-gutters">
       <div class="col-lg-6">
         <%= image_tag 'summer.jpg', class: 'img-fluid card-img' %>
@@ -75,7 +75,7 @@
     </div>
     </div>
     <% elsif @today == 9 || 10 || 11 %>
-    <div class="card topic-card autumn offset-1 mt-5" style="width:auto;">
+    <div class="card topic-card autumn offset-1  mb-5 p-2" style="width:auto;">
     <div class="row no-gutters">
       <div class="col-lg-6">
         <%= image_tag 'autumn.jpg', class: 'img-fluid card-img' %>
@@ -91,7 +91,7 @@
     </div>
     </div>
     <% else %>
-    <div class="card topic-card winter offset-1 mt-5" style="width:auto;">
+    <div class="card topic-card winter offset-1  mb-5 p-2" style="width:auto;">
     <div class="row no-gutters">
       <div class="col-lg-6">
         <%= image_tag 'winter.jpg', class: 'img-fluid card-img' %>
