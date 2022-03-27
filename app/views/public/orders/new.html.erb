@@ -1,9 +1,9 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-      <p class="title h4 text-secondary col-3 offset-1 mt-3">ご注文情報入力</p>
+      <p class="title h4 text-secondary col-sm-3 offset-sm-1 mt-3">ご注文情報入力</p>
   </div>
- <div class="h6 offset-4 text-danger">
+ <div class="h6 offset-sm-4 text-danger">
     <% if @order.errors.any? %>
      <% @order.errors.full_messages.each do |message| %>
        <%= content_tag :div, message %>
@@ -12,10 +12,10 @@
  </div>
   <%= form_with model: @order, url: orders_confirm_path, local:true do |f| %>
   <div class="row">
-    <div class="col-2 offset-1 mt-3">
+    <div class="col-sm-2 offset-sm-1 mt-3">
       <p class="h5 text-secondary">お支払い方法</p>
     </div>
-    <div class="col-3 mt-3 h5">
+    <div class="col-sm-3 mt-3 h5">
       <%= f.radio_button :payment, 0, checked: @order.payment.to_s == 'credit_card' %>
       <%= f.label :payment,"クレジットカード", value: 0 %><br>
       <%= f.radio_button :payment, 1, checked: @order.payment.to_s == 'transfer' %>
@@ -23,45 +23,45 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-2 offset-1 mt-3">
+    <div class="col-sm-2 offset-sm-1 mt-3">
       <p class="h5 text-secondary">お届け先</p>
     </div>
-    <div class="col-9 h5 mt-3">
+    <div class="col-sm-9 h5 mt-3">
       <%= radio_button_tag :select_address, 0, (params["select_address"].nil? ? '0' : params["select_address"].to_s) == '0' %>
       <%= f.label :select_address, "ご登録の住所へ配送" %><br>
        <P class="address ml-3 h5">〒<%= current_customer.postal_code %>  <%= current_customer.address %><br><%= current_customer.name %>  様</P>
     </div>
-    <div class="col-9 h5 offset-3 mt-3">
+    <div class="col-sm-9 h5 offset-sm-3 mt-3">
       <%= radio_button_tag :select_address, 1, (params["select_address"].nil? ? '0' : params["select_address"].to_s) == '1' %>
       <%= f.label :select_address, "ご登録以外の住所へ配送" %><br>
     </div>
   </div>
   <div class="row">
-    <div class="col-3 offset-3">
+    <div class="col-sm-3 offset-sm-3">
       <p class="ml-3 ">郵便番号(ハイフンなし)</p>
     </div>
-    <div class="col-5">
+    <div class="address-form col-sm-5">
       <%= f.text_field :postal_code %>
     </div>
   </div>
   <div class="row">
-    <div class="col-3 offset-3">
+    <div class="col-sm-3 offset-sm-3">
       <p class="ml-3">住所</p>
     </div>
-    <div class="col-6">
+    <div class="address-form col-sm-6">
       <%= f.text_field :address, size: "50" %>
     </div>
   </div>
   <div class="row">
-    <div class="col-3 offset-3">
+    <div class="col-sm-3 offset-sm-3">
       <p class="ml-3">宛名</p>
     </div>
-    <div class="col-5">
+    <div class="address-form col-sm-5">
       <%= f.text_field :name %> 様
     </div>
   </div>
   <div class="row">
-    <div class="col-4 offset-4">
+    <div class="col-sm-4 offset-sm-4">
       <%= f.submit "確認画面へ進む", class: 'btn btn-outline-success btn-block mt-4' %>
     </div>
   </div>

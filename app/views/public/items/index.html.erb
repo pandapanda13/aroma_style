@@ -1,10 +1,10 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-    <p class="offset-2 h4 px-3 mb-4 text-secondary">商品一覧</p>
+    <p class="offset-sm-2 h4 px-3 mb-4 text-secondary">商品一覧</p>
   </div>
   <div class="row">
-    <div class="offset-2 col-8 mb-4">
+    <div class="offset-sm-2 col-sm-8 mb-4">
       <%= search_form_for @a, url: items_search_path	 do |f| %>
         <%= f.search_field :name_or_introduction_cont, placeholder: 'search' %>
         <%= f.button :type => "submit", style: 'border-style: none;' do %>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <h4 class="items-title offset-2 col-9 mt-3 mb-4 border-bottom text-secondary">ブレンド商品<span class="h5">(お好きな香りを組み合わせて作るオリジナルのアロマオイル)</span><h4>
+    <h4 class="items-title offset-sm-2 col-sm-9 mt-3 mb-4 border-bottom text-secondary">ブレンド商品<span class="h5">(お好きな香りを組み合わせて作るオリジナルのアロマオイル)</span><h4>
     <div class="item-index-card card-deck">
        <% @items_blend.each do |item_blend| %>
        <div class="item-card-resp ml-5">
@@ -33,7 +33,7 @@
   </div>
 
   <div class="row">
-    <h4 class="items-title offset-2 col-9 mt-3 mb-4 border-bottom text-secondary"> 通常商品</h4>
+    <h4 class="items-title offset-sm-2 col-sm-9 mt-3 mb-4 border-bottom text-secondary"> 通常商品</h4>
     <div class="item-index-card card-deck">
       <% @items.each do |item| %>
       <div class="item-card-resp ml-5">
@@ -47,11 +47,12 @@
      </div>
      <% end %>
     </div>
-    <div class="pagination col-8 offset-2">
+    <div class="pagination col-sm-8 offset-sm-2">
      <%= paginate @items %>
     </div>
   </div>
   <script>
+  $('average-review-rating').empty();
   $('.average-review-rating').raty({
     readOnly: true,
     size: 20,

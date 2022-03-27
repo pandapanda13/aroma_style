@@ -7,7 +7,7 @@
   </div>
 
   <div class="row">
-    <div class="col-8 offset-2 mt-3">
+    <div class="col-sm-8 offset-sm-2 mt-3">
       <h5 class="text-center text-secondary">退会すると、これまでの<br>
       購入履歴が確認できなくなります。また、お買い物の際は<br>
       再度新規会員登録が必要となります。<br>
@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <div class="col-4 offset-4 mt-3">
+    <div class="col-sm-4 offset-sm-4 mt-3">
       <%= link_to "退会しない", customers_mypage_path(current_customer), class: 'btn btn-outline-primary ml-4' %>
       <%= link_to "退会する", customers_withdraw_path	, method: :patch, class: 'btn btn-outline-danger ml-4', data: {confirm: '本当に退会しますか'} %>
     </div>

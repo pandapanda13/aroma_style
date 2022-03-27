@@ -1,9 +1,9 @@
 <div class="bc">
 <div class="container">
  <div class="row">
-    <p class="h4 col-8 offset-2 mt-4 text-secondary text-center"><%= @item.name %>のレビュー投稿</p>
+    <p class="h4 col-sm-8 offset-sm-2 mt-4 text-secondary text-center"><%= @item.name %>のレビュー投稿</p>
  </div>
- <div class="h6 offset-4 text-danger">
+ <div class="h6 offset-sm-4 text-danger">
     <% if @comment.errors.any? %>
      <% flash.each do |message_type, message| %>
      <%= content_tag :div, message, class: message_type %>
@@ -12,18 +12,17 @@
  </div>
   <%= form_with model:@comment, url: item_comments_path(@item), method: :post, local:true do |f| %>
  <div class="row">
-  <div class="col-8 offset-2 mt-2 text-center text-secondary">
+  <div class="col-sm-8 offset-sm-2 mt-2 text-center text-secondary">
    <div id="star">
         <%= f.label :rate,  "星評価 (※必須)"  %>
-        <%#= f.text_field :rate, id: :star %>
         <%= f.hidden_field :rate ,id: :comment_rate %>
   </div>
-  <div class="col-8 offset-2 mt-2 text-center">
+  <div class="col-sm-8 offset-sm-2 mt-2 text-center">
    <%= f.text_area :comment_content, placeholder: "星評価のみでも投稿できます", size: "42x5" %><br>
   </div>
-  　<p class="h5 offset-3 text-left">表示名:    <%= current_customer.nickname %>  さん</p>
+  　<p class="h5 offset-sm-3 text-left">表示名:    <%= current_customer.nickname %>  さん</p>
  </div>
-    <%= f.submit "投稿", class: 'col-4 offset-4 mt-2 btn btn-block btn-outline-success' %>
+    <%= f.submit "投稿", class: 'col-sm-4 offset-sm-4 mt-2 btn btn-block btn-outline-success' %>
   <% end %>
 </div>
 </div>

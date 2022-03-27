@@ -1,10 +1,10 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-    <p class="title h4 text-secondary col-2 mt-3">注文履歴一覧</p>
+    <p class="title h4 text-secondary col-sm-2 mt-3">注文履歴一覧</p>
   </div>
   <div class="row">
-    <table class="col-12 mt-3 table-bordered">
+    <table class="col-sm-12 mt-3 table-bordered table-responsive-sm">
       <thead>
         <tr class="text-center text-secondary">
           <th class="py-2 px-1">注文日</th>
@@ -29,7 +29,7 @@
       </tbody>
       <% end %>
     </table>
-    <div class="pagination col-8 offset-2">
+    <div class="pagination col-sm-8 offset-sm-2">
     <%= paginate @orders %>
     </div>
   </div>

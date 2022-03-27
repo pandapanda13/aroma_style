@@ -1,5 +1,6 @@
 class Public::CommentsController < ApplicationController
   before_action :authenticate_customer!, except: [:index]
+
   def index
     @item = Item.find(params[:item_id])
     @comments = @item.comments
@@ -15,8 +16,12 @@ class Public::CommentsController < ApplicationController
   end
 
   def new
+    #@orders = current_customer.orders
     @item = Item.find(params[:item_id])
     @comment = Comment.new
+    #if @orders.order_details.item_id.include?(comment.item_id)
+      #redirect_to item_comments_path
+    #end
   end
 
   def create

@@ -1,18 +1,19 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-    <p class="title h4 text-secondary offset-2"><%= @item.name %> のレビュー 一覧</p>
+    <p class="title h4 text-secondary offset-sm-2"><%= @item.name %> のレビュー 一覧</p>
   </div>
   <% if @comments.empty? %>
-    <p class="text-secondary offset-2 mt-3">まだ <%= @item.name %> のレビューはありません</p>
+    <p class="text-secondary offset-sm-2 mt-3">まだ <%= @item.name %> のレビューはありません</p>
   <% end %>
   <div class="row">
     <% @comments.each do |comment| %>
-    <div class="card col-8 offset-2 mt-2 text-secondary">
+    <div class="card col-sm-8 offset-sm-2 mt-2 text-secondary">
 
     <p class="mb-auto mt-2">投稿者：<%= comment.customer.nickname %> さん</p>
     <div id="rate-<%= comment.id %>"></div>
     <script>
+          $('#rate-<%= comment.id %>').empty();
           $('#rate-<%= comment.id %>').raty({
             size: 36,
             starOff:  '<%= asset_path('star-off.png') %>',

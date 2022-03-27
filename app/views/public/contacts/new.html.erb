@@ -2,11 +2,11 @@
  <div class="container">
   <%= form_with(model: @contact, local: true) do |f| %>
     <div class='row'>
-        <p class='title h5 col-8 offset-2 mt-5 text-secondary text-center'>お問い合わせフォーム</p>
+        <p class='title h5 col-sm-8 offset-sm-2 mt-5 text-secondary text-center'>お問い合わせフォーム</p>
     </div>
 
     <div class="row">
-      <div class="offset-4 text-danger">
+      <div class="offset-sm-4 text-danger">
       <% if @contact.errors.any? %>
         <div id="error_explanation">
           <ul><% @contact.errors.full_messages.each do |message| %>
@@ -16,7 +16,7 @@
         </div>
       <% end %>
       </div>
-      <div class="col-8 offset-2 text-center">
+      <div class="col-sm-8 offset-sm-2 text-center">
         <div class="contact-form mt-3">
             <div class="correct-text-field">
               <%= f.text_field :name, placeholder: "お名前", class: "input-form", size:"50" %>
@@ -27,10 +27,10 @@
             <div class="correct-text-field mt-3">
               <%= f.text_area :content, placeholder: "お問合せ内容を入力してください", class: "input-form", size: "50x5" %>
             </div>
-            <div class="col-4 offset-4 mt-3">
+            <div class="col-sm-4 offset-sm-4 mt-3">
                 <%= f.submit "送信", class: 'btn btn-outline-success btn-block' %>
               </div>
-              <div class="col-4 offset-4 mt-3">
+              <div class="col-sm-4 offset-sm-4 mt-3">
                 <%= link_to "トップページへ", root_path, class:'btn btn-outline-secondary btn-block' %>
               </div>
             </div>

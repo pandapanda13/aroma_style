@@ -8,8 +8,8 @@ class Customer < ApplicationRecord
   validates :name_kana, presence: true
   validates :nickname, presence: true
   validates :email, presence: true
-  validates :telephone_number, presence: true
-  validates :postal_code, presence: true
+  validates :telephone_number, presence: true, numericality: { only_integer: true }
+  validates :postal_code, presence: true, numericality: { only_integer: true }
   validates :address, presence: true
   validates :email, presence: true
 

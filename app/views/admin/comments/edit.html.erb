@@ -1,12 +1,12 @@
 <div class="bc">
 <div class="container">
  <div class="row">
-    <p class="h4 col-8 offset-2 mt-4 mb-4 text-secondary">レビュー編集</p>
+    <p class="h4 col-sm-8 offset-sm-2 mt-4 mb-4 text-secondary">レビュー編集</p>
  </div>
 
  <%= form_with model: @comment, url: admin_comment_path(@comment), local:true do |f| %>
  <div class="row">
-    <label for="rate": class="col-2 offset-2 mt-1 text-secondary">星評価</label>
+    <label for="rate": class="col-sm-2 offset-sm-2 mt-1 text-secondary">星評価</label>
     <div id="rate-<%= @comment.id %>"></div>
     <script>
           $('#rate-<%= @comment.id %>').raty({
@@ -22,11 +22,11 @@
 
  </div>
  <div class="row">
-    <label for="comment_content": class="col-2 offset-2 mt-3 text-secondary">レビュー</label>
-    <div class="col-8 mt-3 "><%= f.text_area :comment_content, size: "45x4" %></div>
+    <label for="comment_content": class="col-sm-2 offset-sm-2 mt-3 text-secondary">レビュー</label>
+    <div class="col-sm-8 mt-3 "><%= f.text_area :comment_content, size: "45x4" %></div>
  </div>
  <div class="row">
-    <div class="col-2 offset-4 mt-4">
+    <div class="col-sm-2 offset-sm-4 mt-4">
       <%= f.submit :編集内容を保存, class: 'btn btn-outline-success py-2 px-3' %>
     </div>
  </div>

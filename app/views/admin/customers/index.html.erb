@@ -1,10 +1,9 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-   <p class="h4 col-3 offset-2 mt-3 text-secondary">顧客一覧</p>
+   <p class="h4 col-sm-3 offset-sm-2 mt-3 text-secondary">顧客一覧</p>
   </div>
-  <div class="table-responsive">
-  <table class="table-bordered offset-2  mt-3 center-block">
+  <table class="table-bordered table-responsive-sm offset-sm-2  mt-3 center-block">
    <thead>
       <tr class="text-center text-secondary">
         <th class="py-2 px-2">会員ID</th>
@@ -31,8 +30,7 @@
     <% end %>
    </tbody>
   </table>
-  </div>
-  <div class="pagination col-8 offset-2">
+  <div class="pagination col-sm-8 offset-sm-2">
     <%= paginate @customers %>
   </div>
  </div>

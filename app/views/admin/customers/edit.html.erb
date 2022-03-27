@@ -1,41 +1,41 @@
 <div class="bc">
 <div class="container">
   <div class="row">
-   <p class="h4 col-6 offset-2 text-secondary"><%= @customer.name %>  様  顧客詳細編集</p>
+   <p class="h4 col-sm-6 offset-sm-2 text-secondary"><%= @customer.name %>  様  顧客詳細編集</p>
   </div>
 
   <%= form_with model: @customer, url: admin_customer_path(@customer.id), local:true do |f| %>
   <div class="row mt-3 text-secondary">
-    <p class="col-3 offset-2">会員ID</p>
-    <div class="col-7"><%= @customer.id %></div>
+    <p class="col-sm-3 offset-sm-2">会員ID</p>
+    <div class="col-sm-7"><%= @customer.id %></div>
 
-    <p class="col-3 offset-2">氏名</p>
-    <div class="col-7"><%= f.text_field :name %></div>
+    <p class="col-sm-3 offset-sm-2">氏名</p>
+    <div class="col-sm-7"><%= f.text_field :name %></div>
 
-    <p class="col-3 offset-2">フリガナ</p>
-    <div class="col-7"><%= f.text_field :name_kana %></div>
+    <p class="col-sm-3 offset-sm-2">フリガナ</p>
+    <div class="col-sm-7"><%= f.text_field :name_kana %></div>
 
-    <p class="col-3 offset-2">表示名</p>
-    <div class="col-7"><%= f.text_field :nickname %></div>
+    <p class="col-sm-3 offset-sm-2">表示名</p>
+    <div class="col-sm-7"><%= f.text_field :nickname %></div>
 
-    <p class="col-3 offset-2">郵便番号</p>
-    <div class="col-7"><%= f.text_field :postal_code %></div>
+    <p class="col-sm-3 offset-sm-2">郵便番号</p>
+    <div class="col-sm-7"><%= f.text_field :postal_code %></div>
 
-    <p class="col-3 offset-2">住所</p>
-    <div class="col-7"><%= f.text_field :address, size: "65" %></div>
+    <p class="col-sm-3 offset-sm-2">住所</p>
+    <div class="col-sm-7"><%= f.text_field :address, size: "65" %></div>
 
-    <p class="col-3 offset-2">電話番号</p>
-    <div class="col-7"><%= f.text_field :telephone_number %></div>
+    <p class="col-sm-3 offset-sm-2">電話番号</p>
+    <div class="col-sm-7"><%= f.text_field :telephone_number %></div>
 
-    <p class="col-3 offset-2">メールアドレス</p>
-    <div class="col-7"><%= f.text_field :email %></div>
+    <p class="col-sm-3 offset-sm-2">メールアドレス</p>
+    <div class="col-sm-7"><%= f.text_field :email %></div>
 
-    <p class="col-3 offset-2">会員ステータス</p>
-    <div class="col-7"><%= f.radio_button :is_active, true %>
+    <p class="col-sm-3 offset-sm-2">会員ステータス</p>
+    <div class="col-sm-7"><%= f.radio_button :is_active, true %>
    <%= f.label :is_active,"有効", value: true %>
    <%= f.radio_button :is_active, false %>
    <%= f.label :is_active,"退会", value: false %></div>
-   <div class="col-3 offset-5"><%= f.submit '変更を保存', class: 'btn btn-outline-success btn-block px-3 py-2' %></div>
+   <div class="col-sm-3 offset-sm-5"><%= f.submit '変更を保存', class: 'btn btn-outline-success btn-block px-3 py-2' %></div>
 　</div>
 　<% end %>
 </div>

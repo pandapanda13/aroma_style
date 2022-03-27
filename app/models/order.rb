@@ -2,7 +2,7 @@ class Order < ApplicationRecord
   belongs_to :customer
   has_many :order_details
 
-  validates :postal_code, presence: true
+  validates :postal_code, presence: true, numericality: { only_integer: true }
   validates :address, presence: true
   validates :name, presence: true
 

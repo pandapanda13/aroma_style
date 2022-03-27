@@ -1,67 +1,67 @@
 <div class="bc">
 <div class="container">
  <div class="row">
-  <p class="h4 col-2 offset-2 text-secondary">商品編集</p>
+  <p class="h4 col-sm-2 offset-sm-2 text-secondary">商品編集</p>
  </div>
 
 
 <%= form_with model: @item, url: admin_item_path(@item.id), local:true do |f| %>
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>商品画像</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.file_field :image_id, accept: "image/*" %>
  </div>
 </div>
 
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>商品名</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.text_field :name %>
  </div>
 </div>
 
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>容量</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.text_field :volume %>
  </div>
 </div>
 
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>商品説明</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.text_area :introduction, size: "40x10" %>
  </div>
 </div>
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>おすすめブレンド</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.text_area :blend_example, size: "40x5" %>
  </div>
 </div>
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>税抜価格</p>
  </div>
- <div class="col-4 mt-3 text-secondary">
+ <div class="col-sm-4 mt-3 text-secondary">
   <%= f.text_field :price %>円
  </div>
 </div>
 <div class="row">
- <div class="col-2 offset-2 mt-3 text-secondary">
+ <div class="col-sm-2 offset-sm-2 mt-3 text-secondary">
   <p>商品ジャンル</p>
  </div>
- <div class="col-4 mt-3">
+ <div class="col-sm-4 mt-3">
    <%= f.radio_button :blend_flag, true %>
    <%= f.label :blend_flag,"ブレンド商品", value: true %>
    <%= f.radio_button :blend_flag, false %>
@@ -69,9 +69,9 @@
  </div>
 </div>
 
-<div class="row">
- <div class="col-2 offset-2 mt-3"></div>
-  <%= f.submit :変更を保存, class: 'btn btn-outline-success col-4 btn-block py-2 px-4' %>
+<div class="row pb-4">
+ <div class="col-sm-2 offset-sm-2 mt-3"></div>
+  <%= f.submit :変更を保存, class: 'btn btn-outline-success col-sm-4 btn-block py-2 px-4' %>
  </div>
 </div>
 <% end %>
