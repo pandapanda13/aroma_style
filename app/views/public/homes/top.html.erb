@@ -10,7 +10,7 @@
  <div class="row offset-1 mt-5">
 　 <p class="h5 text-secondary font-weight-bold ml-5 mt-3 mr-0">ランキング</p>
  </div>
- <div class="row offset-2">
+ <div class="row offset-2 mt-5">
      <div class="top-ranking">
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
@@ -26,7 +26,7 @@
  <div class="row offset-1">
 　 <p class="h5 text-secondary font-weight-bold ml-5 mr-3 mt-3">新着商品</p>
  </div>
- <div class="row offset-2">
+ <div class="row offset-2 mt-3">
      <div class="top-ranking">
      <% @items.each do |item| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
