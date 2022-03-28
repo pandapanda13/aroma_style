@@ -8,12 +8,16 @@ class Item < ApplicationRecord
   (self.price * 1.10).floor
   end
 
-   def avg_score
+  def avg_score
     unless self.comments.empty?
       comments.average(:rate).round(1)
     else
       0.0
     end
-   end
+  end
+
+  def self.item_comment_ranks(limit)
+    self.find(Comment.group(:item_id).order("rate DESC").pluck(:item_id)).first(limit)
+  end
 
 end

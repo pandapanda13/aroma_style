@@ -16,12 +16,14 @@ class Public::CommentsController < ApplicationController
   end
 
   def new
-    #@orders = current_customer.orders
+    @orders = current_customer.orders
     @item = Item.find(params[:item_id])
     @comment = Comment.new
-    #if @orders.order_details.item_id.include?(comment.item_id)
-      #redirect_to item_comments_path
-    #end
+    # もし過去に商品を購入していれば 1以上がはいる
+    check_count = OrderDetail.where(order_id: @orders, item_id: @item.id).count
+    if check_count <= 0
+      redirect_to item_comments_path
+    end
   end
 
   def create
@@ -30,7 +32,6 @@ class Public::CommentsController < ApplicationController
     if @comment.save
      redirect_to item_comments_path(@comment.item)
     else
-
       @item = Item.find(params[:item_id])
       flash[:danger] = 'コメントの投稿に失敗しました'
       render :new
@@ -39,13 +40,12 @@ class Public::CommentsController < ApplicationController
 
   def update
     comment = Comment.find(params[:id])
-    if comment.customer == current_customer
+     if comment.customer == current_customer
       comment.update(comment_params)
        redirect_to customers_mypage_path(current_customer)
      else
        redirect_to customers_mypage_path(current_customer)
      end
-
   end
 
   def destroy
