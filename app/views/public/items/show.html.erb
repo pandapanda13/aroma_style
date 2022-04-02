@@ -1,4 +1,4 @@
-
+<div class="bc">  
 <div class="container-fluid">
   <div class="row pb-5">
     <div class="image col-sm-3 offset-sm-1 mt-5">
@@ -7,9 +7,7 @@
       <p class="review">レビュー
       <%= link_to item_comments_path(@item), class: "link-line" do %>（ <%= @item.comments.count %> ）
       <% end %></p>
-
     </div>
-
     <div class="item-show col-sm-6 offset-sm-1 mt-5">
       <h4 class="item-name mb-3"><%= @item.name %></h4>
       <p class="h6">容量：<%= @item.volume %></p>
@@ -18,8 +16,8 @@
       <P class="font-weight-bold"><%= @item.add_tax_price.to_s (:delimited) %>
          円(税込)</P>
 
-   <% if customer_signed_in? %>
-    <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
+    <% if customer_signed_in? %>
+     <%= form_with model: @cart_item, url: cart_items_path, method: :post, local: true do |f| %>
 
     <div class="select mt-2">
           <% if @item.blend_flag == true %>

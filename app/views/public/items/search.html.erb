@@ -2,12 +2,12 @@
  <div class="container">
   <p class="title offset-sm-2 h4 text-secondary">検索結果一覧</p>
   <div class="row offset-sm-2 mt-5">
-   <div class="item-result-card card-deck" style="width:900px;">
+   <div class="item-result-card card-deck">
      <% if @results.length !=0 %>
        <% @results.each do |result| %>
-       <div class="ml-5">
-         <%= link_to item_path(result.id), class: "item-link" do %>
-         <div class="image"><%= image_tag result.image_id, size: "220x180", class: "img-fluid" %></div>
+       <div class="mx-3">
+         <%= link_to item_path(result.id), class: "link-line" do %>
+         <div class="image"><%= image_tag result.image_id, size: "220x180" %></div>
          <p><%= result.name %><%= result.volume %></p>
          <p><%= result.price %>円</p>
          <% end %>

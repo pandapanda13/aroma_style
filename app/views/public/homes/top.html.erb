@@ -1,4 +1,4 @@
-<div class="bc">
+<div class="bc pb-3">
 <div class="container">
  <div class="row pb-3">
   <% if flash[:notice] %>
@@ -7,11 +7,9 @@
   <div class="col-sm-12">
 　 <div class="top-bg h1 col-sm-10 offset-1 mt-2"> Welcome To Aroma Style</div>
  </div>
- <div class="row offset-1 mt-5">
-　 <p class="h5 text-secondary font-weight-bold ml-5 mt-3 mr-0">ランキング</p>
- </div>
- <div class="row offset-2 mt-5">
-     <div class="top-ranking">
+ <div class="row offset-sm-1 mt-5">
+　 <p class="h5 col-sm-10 text-secondary font-weight-bold ml-5 mt-3 mr-0"><i class="fa-solid fa-ranking-star"></i>  ランキング</p>
+   <div class="top-ranking col-sm-10 offset-sm-1 ">
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
         <p class="h6 text-secondary">No.<%= i %></p>
@@ -20,21 +18,19 @@
         <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
      <% end %>
-     </div>
+   </div>
  </div>
 
  <div class="row offset-1">
-　 <p class="h5 text-secondary font-weight-bold ml-5 mr-3 mt-3">新着商品</p>
- </div>
- <div class="row offset-2 mt-3">
-     <div class="top-ranking">
+　 <p class="h5 col-sm-10  text-secondary font-weight-bold ml-5 mr-3 mt-3"><i class="fa-solid fa-bullhorn"></i>　新着商品</p>
+   <div class="top-ranking col-sm-10 offset-sm-1" >
      <% @items.each do |item| %>
       <%= link_to item_path(item), class: "link mx-3" do %>
         <div class="image"><%= image_tag item.image_id, size: "170x110" %></div>
         <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
      <% end %>
-     </div>
+   </div>
  </div>
 
 
@@ -113,7 +109,7 @@
  </div>
 
 <script>
-     $('.average-review-rating').empty(); 
+     $('.average-review-rating').empty();
      $('.average-review-rating').raty({
       size: 20,
       readOnly: true,

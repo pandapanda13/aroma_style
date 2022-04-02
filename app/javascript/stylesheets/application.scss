@@ -47,6 +47,8 @@ footer{
 
 .image {
   filter: opacity(60%);
+  position: relative;
+	overflow: hidden;
 }
 
 .card-img {
@@ -92,7 +94,7 @@ footer{
   background: linear-gradient(to bottom, #FFF,oldlace 20%);
   background-size: cover;
   width: 100vw;
-  min-height: 100vh;
+  min-height: 50vh;
 }
 
 .item-index-card {
