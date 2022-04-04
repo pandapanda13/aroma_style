@@ -1,28 +1,26 @@
-<div class="bc">
 <div class="container">
   <div class="row">
-    <div class="col-4 offset-4 mt-5" >
+    <div class="col-sm-4 offset-sm-4 mt-5" >
       <h4 class="text-center text-secondary font-weight-bold">本当に退会されますか?</h4>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-sm-8 offset-sm-2 mt-3">
-      <h5 class="text-center text-secondary">退会すると、これまでの<br>
-      購入履歴が確認できなくなります。また、お買い物の際は<br>
-      再度新規会員登録が必要となります。<br>
+    <div class="col-sm-8 offset-sm-3 mt-3">
+      <h5 class="text-left text-secondary">退会すると、これまでの購入履歴がなくなります。<br>
+      また、お買い物の際は再度新規会員登録が必要となります。<br>
       退会される場合は、「退会する」をクリックしてください。</h5>
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-sm-4 offset-sm-4 mt-3">
-      <%= link_to "退会しない", customers_mypage_path(current_customer), class: 'btn btn-outline-primary ml-4' %>
-      <%= link_to "退会する", customers_withdraw_path	, method: :patch, class: 'btn btn-outline-danger ml-4', data: {confirm: '本当に退会しますか'} %>
+  <div class="row mb-5">
+    <div class="col-sm-8 my-4 offset-sm-3">
+      <%= link_to "退会しない", customers_mypage_path(current_customer), class: 'btn btn-outline-primary offset-sm-2' %>
+      <%= link_to "退会する", customers_withdraw_path	, method: :patch, class: 'btn btn-outline-danger offset-sm-1 px-3', data: {confirm: '本当に退会しますか'} %>
     </div>
   </div>
 </div>
-</div>
+
 
 
 

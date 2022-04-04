@@ -1,4 +1,3 @@
-<div class="bc">
 <div class="container">
  <div class="row">
     <p class="h4 col-sm-8 offset-sm-2 mt-5 mb-5 text-secondary text-center">レビュー編集</p>
@@ -28,11 +27,10 @@
     <label for="comment_content": class="col-sm-2 offset-sm-2 mt-3 text-secondary">レビュー</label>
     <div class="col-sm-8 mt-3"><%= f.text_area :comment_content, size: "50" %></div>
  </div>
- <div class="row">
+ <div class="row mb-5">
     <div class="col-sm-2 offset-sm-4 mt-4">
       <%= f.submit :編集内容を保存, class: 'btn btn-outline-success py-2 px-3' %>
     </div>
  </div>
  <% end %>
-</div>
 </div>

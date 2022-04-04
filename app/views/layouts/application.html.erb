@@ -15,8 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
   </head>
-　<div class="hbc">
-  <body>
+　<div class="">
+  <body class="hbc">
     <header>
     <% if customer_signed_in? %>
      <div class="container">
@@ -28,7 +28,7 @@
          </div>
        </div>
        <div class="row justify-content-center mb-4">
-         <nav class="navbar col-12 navbar-expand-lg ">
+         <nav class="navbar col-sm-12 navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
             <li class=""><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
             <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
@@ -37,7 +37,7 @@
             <li class="mx-2"><%= link_to destroy_customer_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
-         <div class="shipping-fee col-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
+         <div class="shipping-fee col-sm-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
      </div>
      <% elsif admin_signed_in? %>
@@ -50,7 +50,7 @@
          </div>
        </div>
        <div class="row justify-content-center mb-4">
-         <nav class="navbar col-10 navbar-expand-lg ">
+         <nav class="navbar col-sm-10 navbar-expand-lg ">
           <ul class="navbar-nav mt-2">
             <li class="mx-2"><%= link_to admin_homes_top_path, class: "link" do %><p class="h5 font-weight-bold">Orders</p><p class="font-weight-normal">注文履歴一覧</p><% end %></li>
             <li class="mx-2"><%= link_to admin_customers_path, class: "link" do %><p class="h5 font-weight-bold">Customers</p><p class="font-weight-normal">顧客一覧</p><% end %></li>
@@ -58,7 +58,7 @@
             <li class="mx-2"><%= link_to destroy_admin_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
           </ul>
          </nav>
-         <div class="shipping-fee col-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
+         <div class="shipping-fee col-sm-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
      </div>
      <% else %>
@@ -71,7 +71,7 @@
          </div>
        </div>
        <div class="row mb-4">
-         <nav class="navbar col-10 offset-1 navbar-expand-lg">
+         <nav class="navbar col-sm-10 offset-sm-1 navbar-expand-lg">
           <ul class="navbar-nav mt-2">
             <li class="mx-2"><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
             <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
@@ -79,7 +79,7 @@
             <li class="mx-2"><%= link_to customer_session_path, class: "link" do %><p class="h5 font-weight-bold">Log In</p><p class="font-weight-normal">ログイン</p><% end %></li>
           </ul>
          </nav>
-         <div class="shipping-fee col-10 offset-1 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
+         <div class="shipping-fee col-sm-10 offset-sm-1 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
       <% end %>
      </div>
