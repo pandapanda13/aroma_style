@@ -263,6 +263,10 @@ footer{
 #admin_password {
   width: 300px;
 }
+
+table, tbody, tr,td,th {
+    white-space: nowrap;
+  }
 }
 
 // Place all the styles related to the public/homes controller here.
