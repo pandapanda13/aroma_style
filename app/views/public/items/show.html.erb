@@ -1,13 +1,13 @@
 <div class="container-fluid">
   <div class="row pb-5">
-    <div class="image col-sm-3 offset-sm-1 mt-5">
+    <div class="image col-sm-3 offset-sm-2 mt-5">
       <%= image_tag @item.image_id, size: "300x240" %><br>
       <div class="average-review-rating mt-3" data-score=<%= @item.avg_score %>></div>
       <p class="review">レビュー
       <%= link_to item_comments_path(@item), class: "link-line" do %>（ <%= @item.comments.count %> ）
       <% end %></p>
     </div>
-    <div class="item-show col-sm-6 offset-sm-1 mt-5">
+    <div class="item-show col-sm-5 ml-2 mt-5">
       <h4 class="item-name mb-3"><%= @item.name %></h4>
       <p class="h6">容量：<%= @item.volume %></p>
       <p class="item-p-resp"><%= safe_join(@item.introduction.split("\n"),tag(:br)) %></p>
