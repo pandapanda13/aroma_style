@@ -7,12 +7,12 @@
 　 <div class="top-bg h1 col-sm-10 offset-1 mt-2"> Welcome To Aroma Style</div>
  </div>
  <div class="row offset-sm-1 mt-5">
-　 <p class="h5 col-sm-10 text-secondary font-weight-bold my-5 mt-3"><i class="fa-solid fa-ranking-star"></i>  ランキング</p>
-   <div class="top-ranking col-sm-10 offset-sm-1">
+　 <p class="h5 col-sm-10 text-secondary font-weight-bold mt-3"><i class="fa-solid fa-ranking-star"></i>  ランキング</p>
+   <div class="top-ranking col-sm-10 offset-sm-1 mx-5">
      <% @item_comment_ranks.each.with_index(1) do |item, i| %>
-      <%= link_to item_path(item), class: "link mx-5" do %>
+      <%= link_to item_path(item), class: "link mx-4" do %>
         <p class="h6 text-secondary">No.<%= i %></p>
-        <div class="image"><%= image_tag item.image_id, size: "170x110" %></div>
+        <div class="image"><%= image_tag item.image_id, size: "220x160" %></div>
         <div class="average-review-rating mt-1" data-score=<%= item.avg_score %>></div>
         <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
@@ -21,11 +21,11 @@
  </div>
 
  <div class="row offset-sm-1">
-　 <p class="h5 col-sm-10 text-secondary font-weight-bold my-5 mt-3"><i class="fa-solid fa-bullhorn"></i>　新着商品</p>
-   <div class="top-ranking col-sm-10 offset-sm-1" >
+　 <p class="h5 col-sm-10 text-secondary font-weight-bold mt-3"><i class="fa-solid fa-bullhorn"></i>　新着商品</p>
+   <div class="top-ranking col-sm-10 offset-sm-1 mx-5" >
      <% @items.each do |item| %>
-      <%= link_to item_path(item), class: "link mx-5" do %>
-        <div class="image"><%= image_tag item.image_id, size: "170x110" %></div>
+      <%= link_to item_path(item), class: "link mx-4" do %>
+        <div class="image"><%= image_tag item.image_id, size: "220x160" %></div>
         <p><%= item.name %><%= item.volume %><br><%= item.price %>円</p>
       <% end %>
      <% end %>
@@ -34,7 +34,7 @@
 
 
 　 <% if @today == 3 || 4 || 5 %>
-  　<div class="card topic-card spring col-sm-10 offset-sm-1 my-3 p-2" style="width:auto;">
+  　<div class="card topic-card spring col-sm-10 offset-sm-1 my-5 p-2" style="width:auto;">
     <div class="row no-gutters">
       <div class="col-sm-4 mt-4 ml-2">
         <%= image_tag 'spring.jpg', class: 'img-fluid card-img' %>
