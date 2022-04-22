@@ -28,14 +28,19 @@
          </div>
        </div>
        <div class="row justify-content-center mb-4">
-         <nav class="navbar col-sm-12 navbar-expand-lg ">
-          <ul class="navbar-nav mt-2">
+         <nav class="navbar col-sm-12 navbar-expand-lg">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+           <ul class="navbar-nav mt-2">
             <li class=""><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
             <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
             <li class="mx-2"><%= link_to cart_items_path, class: "link" do %><p class="h5 font-weight-bold">Cart</p><p class="font-weight-normal">お買い物かご</p><% end %></li>
             <li class="mx-2"><%= link_to customers_mypage_path, class: "link" do %><p class="h5 font-weight-bold">My Page</p><p class="font-weight-normal">マイページ</p><% end %></li>
             <li class="mx-2"><%= link_to destroy_customer_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
-          </ul>
+           </ul>
+          </div>
          </nav>
          <div class="shipping-fee col-sm-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
@@ -51,12 +56,17 @@
        </div>
        <div class="row justify-content-center mb-4">
          <nav class="navbar col-sm-10 navbar-expand-lg ">
-          <ul class="navbar-nav mt-2">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+           <ul class="navbar-nav mt-2">
             <li class="mx-2"><%= link_to admin_homes_top_path, class: "link" do %><p class="h5 font-weight-bold">Orders</p><p class="font-weight-normal">注文履歴一覧</p><% end %></li>
             <li class="mx-2"><%= link_to admin_customers_path, class: "link" do %><p class="h5 font-weight-bold">Customers</p><p class="font-weight-normal">顧客一覧</p><% end %></li>
             <li class="mx-2"><%= link_to admin_items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
             <li class="mx-2"><%= link_to destroy_admin_session_path, method: :delete, class: "link" do %><p class="h5 font-weight-bold">Log Out</p><p class="font-weight-normal">ログアウト</p><% end %></li>
-          </ul>
+           </ul>
+          </div>
          </nav>
          <div class="shipping-fee col-sm-12 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
@@ -72,12 +82,17 @@
        </div>
        <div class="row mb-4">
          <nav class="navbar col-sm-10 offset-sm-1 navbar-expand-lg">
-          <ul class="navbar-nav mt-2">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+           <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+           <ul class="navbar-nav mt-2">
             <li class="mx-2"><%= link_to about_path, class: "link" do %><p class="h5 font-weight-bold">About</p><p class="font-weight-normal">Aroma Styleについて</p><% end %></li>
             <li class="mx-2"><%= link_to items_path, class: "link" do %><p class="h5 font-weight-bold">Products</p><p class="font-weight-normal">商品一覧</p><% end %></li>
             <li class="mx-2"><%= link_to new_customer_registration_path, class: "link" do %><p class="h5 font-weight-bold">Create Account</p><p class="font-weight-normal">新規会員登録</p><% end %></li>
             <li class="mx-2"><%= link_to customer_session_path, class: "link" do %><p class="h5 font-weight-bold">Log In</p><p class="font-weight-normal">ログイン</p><% end %></li>
-          </ul>
+           </ul>
+          </div>
          </nav>
          <div class="shipping-fee col-sm-10 offset-sm-1 text-center"><i class="fa-solid fa-truck"></i> 送料一律 ５００円</div>
        </div>
