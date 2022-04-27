@@ -54,11 +54,11 @@
  <div class="col-sm-2 offset-sm-3 text-secondary">
   <p>税抜価格</p>
  </div>
- <div class="col-sm-4">
-  <%= f.text_field :price, size: "35" %>円
+ <div class="col-sm-5">
+  <p><%= f.text_field :price, size: "25" %>円</p>
  </div>
 </div>
-<div class="col-sm-2 offset-sm-5">
+<div class="col-sm-4 offset-sm-5">
  <%= f.radio_button :blend_flag, true %>
  <%= f.label :blend_flag, "ブレンド商品", value: true %>
  <%= f.radio_button :blend_flag,false %>
