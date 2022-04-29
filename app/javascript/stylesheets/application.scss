@@ -218,21 +218,12 @@ footer{
   width: 250px;
 }
 
-.sign-in-form {
+.sign-in-form, .sign-up-form  {
   margin-left: 40px;
   margin-top: auto;
 }
 
-.sign-up-form {
-  margin-left: 40px;
-  margin-top: auto;
-}
-
-#customer_address{
-  width: 300px;
-}
-
-#order_address{
+#customer_address, #order_address{
   width: 300px;
 }
 
@@ -244,23 +235,11 @@ footer{
   margin-bottom: 20px;
 }
 
-#contact_name {
+#contact_name, #contact_email, #contact_content {
   width: 300px;
 }
 
-#contact_email {
-  width: 300px;
-}
-
-#contact_content {
-  width: 300px;
-}
-
-#admin_email {
-  width: 300px;
-}
-
-#admin_password {
+#admin_email, #admin_password {
   width: 300px;
 }
 
