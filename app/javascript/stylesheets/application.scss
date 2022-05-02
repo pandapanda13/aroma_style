@@ -6,7 +6,6 @@
   box-sizing: border-box;
 }
 
-
 .navbar {
   justify-content: center;
   text-align: center;
@@ -142,6 +141,7 @@ footer{
 .link {
   text-decoration: none;
   color: slategray;
+  
 }
 .link-line {
   text-decoration: underline;
@@ -161,9 +161,11 @@ footer{
  .item-index-card {
    display: block;
  }
+ 
  .item-result{
    display: block;
  }
+ 
  .row {
    display: block;
  }
@@ -171,6 +173,7 @@ footer{
  .top-ranking{
    display: block;
  }
+ 
 }
 
 @media (max-width: 425px) {
@@ -178,6 +181,7 @@ footer{
    display: block;
    margin-left: 10px;
  }
+ 
  .item-result{
    display: block;
  }
@@ -249,6 +253,7 @@ footer{
 table, tbody, tr,td,th {
     white-space: nowrap;
   }
+  
 }
 
 .navbar-toggler{
