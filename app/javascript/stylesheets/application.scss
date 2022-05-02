@@ -12,6 +12,7 @@
   text-align: center;
   color: gray;
 }
+
 .navbar-nav {
   color: black;
 }
@@ -36,6 +37,7 @@ footer{
 .row-top{
   display: flex;
 }
+
 .shipping-fee {
   border-top: 2px solid gray;
   border-bottom: 2px solid gray;
@@ -165,6 +167,10 @@ footer{
  .row {
    display: block;
  }
+
+ .top-ranking{
+   display: block;
+ }
 }
 
 @media (max-width: 425px) {
@@ -194,9 +200,6 @@ footer{
    font-size: 20px;
  }
 
- .top-ranking{
-   display: block;
- }
 
  .top-bg {
    width: auto;
