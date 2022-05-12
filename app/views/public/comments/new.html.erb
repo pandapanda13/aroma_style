@@ -11,15 +11,16 @@
  </div>
   <%= form_with model:@comment, url: item_comments_path(@item), method: :post, local:true do |f| %>
  <div class="row mb-5">
+  <p class="h5 offset-sm-4 text-left text-secondary">表示名:    <%= current_customer.nickname %>  さん</p>
   <div class="col-sm-8 offset-sm-2 mt-2 text-center text-secondary">
    <div id="star">
         <%= f.label :rate,  "星評価 (※必須)"  %>
         <%= f.hidden_field :rate ,id: :comment_rate %>
-  </div>
-  <div class="col-sm-8 offset-sm-2 mt-2 text-center">
+   </div>
+   <div class="col-sm-8 offset-sm-2 mt-2 text-center">
    <%= f.text_area :comment_content, placeholder: "星評価のみでも投稿できます", size: "42x5" %><br>
-  </div>
-  　<p class="h5 offset-sm-3 text-left">表示名:    <%= current_customer.nickname %>  さん</p>
+   </div>
+  　
  </div>
     <%= f.submit "投稿", class: 'col-sm-4 offset-sm-4 mt-2 btn btn-block btn-outline-success' %>
   <% end %>
